@@ -159,7 +159,7 @@ K_THREAD_DEFINE(sensor_thread,  STACK_SIZE, sensor_sim_fn, NULL, NULL, NULL, 5, 
 
 int main(void)
 {
-    LOG_INF("=== L3 Homework: Polling to Workqueue ===");
+    LOG_INF("=== L3 Task 1: Polling to Workqueue ===");
     LOG_INF("Starter: polling every %dms, sensor fires every %dms",
             POLL_MS, SENSOR_MS);
     LOG_INF("Expected wasted wakeups: ~%d per event",
