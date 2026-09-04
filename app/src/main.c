@@ -1,69 +1,173 @@
+/*
+ * Lecture 3 - Homework Starter Code
+ *
+ * GOAL: Convert a polling loop to an event-driven workqueue architecture.
+ *
+ * The starter code works but is INEFFICIENT.
+ * polling_thread wakes every 10ms to check a flag.
+ * sensor_sim fires every 100ms - that's 10 wasted wake-ups per event.
+ *
+ *
+ * ================================================================
+ * TASKS
+ * ================================================================
+ *
+ * TASK 1 (starter - already works, just run it):
+ *   Run the starter. Count wake-ups vs real events in the log.
+ *   Expected: ~10 wake-ups per sensor event. Confirm this.
+ *
+ * TASK 2 (implement):
+ *   Replace polling_thread with a k_work handler.
+ *   sensor_sim should call k_work_submit() instead of setting a flag.
+ *   The handler should do what polling_thread currently does.
+ *
+ *   Steps:
+ *   - Define a work item with K_WORK_DEFINE
+ *   - Write the handler function
+ *   - In sensor_sim: call k_work_submit() (remove k_sem_give + flag)
+ *   - Remove the polling_thread entirely
+ *
+ * TASK 3 (verify):
+ *   Add k_uptime_get_32() to your handler's LOG_INF.
+ *   Confirm handler runs only when sensor_sim fires (every ~100ms).
+ *   No unnecessary wake-ups.
+ *
+ * BONUS (debounce):
+ *   Change sensor_sim to fire 5 events within 20ms (not 1 per 100ms).
+ *   Use k_work_reschedule with 30ms delay so only ONE handler
+ *   call occurs after the burst - not 5.
+ *   Log the reschedule timestamps to confirm the burst collapses.
+ *
+ * ================================================================
+ */
+
 #include <zephyr/kernel.h>
 #include <zephyr/logging/log.h>
+#include <stdbool.h>
+
+LOG_MODULE_REGISTER(homework, LOG_LEVEL_DBG);
+
+#define STACK_SIZE    1024
+//#define SENSOR_MS     100    /* sensor fires every 100ms */
+#define SENSOR_MS     4    /* sensor fires every 4ms */
+#define POLL_MS       10     /* polling consumer checks every 10ms */
+#define EVENT_COUNT   5     /* total sensor events to produce */
+//#define EVENT_COUNT   10     /* total sensor events to produce */
 
 
-LOG_MODULE_REGISTER(demo, LOG_LEVEL_DBG);
+static void sensor_handler(struct k_work *);
 
-#define STACK_SIZE      1024
-#define PRIO            5
-#define INCREMENTS      1000000   /* each thread increments this many times */
+//K_WORK_DEFINE(sensor_work, sensor_handler);
+K_WORK_DELAYABLE_DEFINE(sensor_work, sensor_handler);
 
-/* Shared state - intentionally unprotected */
-static volatile uint32_t counter;
+/* ================================================================
+ * STARTER CODE -- inefficient polling version
+ * Run this first, then replace with workqueue in Task 2.
+ * ================================================================ */
 
-static struct k_sem done_sem;
-#define STACK_SIZE      1024
-#define PRIO            5
-#define INCREMENTS      1000000   /* each thread increments this many times */
+/* Shared flag between sensor_sim and polling_thread */
+//static volatile bool sensor_flag;
 
-/* Shared state - intentionally unprotected */
-static volatile uint32_t counter;
+/* Statistics */
+static int total_events;
+//static int total_wakeups;
+static int total_processed;
 
-static struct k_sem done_sem;
+/* ------------------------------------------------------------------ */
+/*  sensor_sim - fires EVENT_COUNT events, 100ms apart               */
+/* ------------------------------------------------------------------ */
 
-static K_MUTEX_DEFINE(counter_mutex);
-
-void worker_fn(void *p1, void *p2, void *p3)
+static void sensor_sim_fn(void *p1, void *p2, void *p3)
 {
-    const char *name = k_thread_name_get(k_current_get());
+    for (int i = 0; i < EVENT_COUNT; i++) {
+        k_msleep(SENSOR_MS);
 
-    for (int i = 0; i < INCREMENTS; i++) {
-        k_mutex_lock(&counter_mutex, K_FOREVER);
-        counter++;
-        k_mutex_unlock(&counter_mutex);
+        total_events++;
+        LOG_INF("[SENSOR] event %d  tick=%u", i, k_uptime_get_32());
+
+        /*
+         * STARTER: set a flag for the polling thread.
+         *
+         * TASK 2: Replace these two lines with:*/
+         //int ret = k_work_submit(&sensor_work);
+	 int ret = k_work_reschedule(&sensor_work, K_MSEC(30));
+         if (ret < 0) { LOG_ERR("submit failed: %d", ret); }
+         /*
+         * Remove sensor_flag entirely once you do that.
+         */
+        //sensor_flag = true;
+
+        /*
+         * BONUS: Replace the single k_msleep(SENSOR_MS) above with
+         * a burst of 5 rapid events, then use k_work_reschedule in
+         * the handler to collapse them to one execution.
+         */
     }
 
-    LOG_INF("[%s] finished", name);
-    k_sem_give(&done_sem);
+    LOG_INF("[SENSOR] all events produced");
 }
 
-K_THREAD_DEFINE(worker_a, STACK_SIZE, worker_fn, NULL, NULL, NULL,
-                PRIO, 0, 0);
-K_THREAD_DEFINE(worker_b, STACK_SIZE, worker_fn, NULL, NULL, NULL,
-                PRIO, 0, 0);
+
+static void sensor_handler(struct k_work *work)
+{
+    ARG_UNUSED(work);
+    LOG_INF("[HANDLER] context=%s  tick=%u",
+            k_thread_name_get(k_current_get()),
+            k_uptime_get_32());
+
+    total_processed++;
+
+    LOG_INF("[HANDLER] processed event %d  tick=%u",
+            total_processed,
+            k_uptime_get_32());
+
+}
+
+
+/* ------------------------------------------------------------------ */
+/*  polling_thread - checks flag every 10ms                          */
+/*                                                                     */
+/*  TASK 2: Replace this entire function + thread with a k_work       */
+/*  handler. The handler body is the same as what's inside the        */
+/*  if (sensor_flag) block below.                                      */
+/* ------------------------------------------------------------------ */
+
+
+K_THREAD_DEFINE(sensor_thread,  STACK_SIZE, sensor_sim_fn, NULL, NULL, NULL, 5, 0, 0);
+//K_THREAD_DEFINE(polling_thread, STACK_SIZE, polling_fn,    NULL, NULL, NULL, 5, 0, 0);
+
+/* ================================================================
+ * TASK 2 PLACEHOLDER - implement your solution here
+ *
+ * Uncomment and fill in:
+ *
+ * static void sensor_handler(struct k_work *work)
+ * {
+ *     ARG_UNUSED(work);
+ *     total_processed++;
+ *     LOG_INF("[HANDLER] processed event %d  tick=%u",
+ *             total_processed, k_uptime_get_32());
+ * }
+ *
+ * K_WORK_DEFINE(sensor_work, sensor_handler);
+ *
+ * BONUS PLACEHOLDER - for debounce:
+ *
+ * K_WORK_DELAYABLE_DEFINE(debounce_work, sensor_handler);
+ * In sensor_sim: k_work_reschedule(&debounce_work, K_MSEC(30));
+ * ================================================================ */
 
 int main(void)
 {
-    k_sem_init(&done_sem, 0, 2);
-    int64_t time = k_uptime_get();
+    LOG_INF("=== L3 Homework: Polling to Workqueue ===");
+    LOG_INF("Starter: polling every %dms, sensor fires every %dms",
+            POLL_MS, SENSOR_MS);
+    LOG_INF("Expected wasted wakeups: ~%d per event",
+            (SENSOR_MS / POLL_MS) - 1);
+    LOG_INF("Run this, count wakeups, then convert to workqueue.");
 
-    LOG_INF("=== L2 Demo 2: Mutex Protection ===");
-    LOG_INF("Expected final value: %d", INCREMENTS * 2);
-
-    /* Wait for both workers to complete */
-    k_sem_take(&done_sem, K_FOREVER);
-    k_sem_take(&done_sem, K_FOREVER);
-
-    LOG_INF("Actual  final value: %u", counter);
-
-    if (counter == INCREMENTS * 2) {
-        LOG_WRN("No race this run");
-    } else {
-        LOG_ERR("Race condition confirmed: lost %d updates",
-                (INCREMENTS * 2) - counter);
-    }
-    LOG_INF("Execution time: %lld ms", k_uptime_delta(&time));
+    /* Wait long enough for all events to complete */
+    k_msleep((EVENT_COUNT + 2) * SENSOR_MS + 500);
 
     return 0;
 }
-
