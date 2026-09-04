@@ -16,7 +16,7 @@ void coop_fn(void *p1, void *p2, void *p3)
 
    LOG_INF("[COOP] starting - will run 3 steps without yielding");
 
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 5; i++) {
         k_busy_wait(40000);   
         LOG_INF("[COOP] step %d/3 - still holding CPU  tick=%u",
                 i + 1, k_uptime_get_32());
