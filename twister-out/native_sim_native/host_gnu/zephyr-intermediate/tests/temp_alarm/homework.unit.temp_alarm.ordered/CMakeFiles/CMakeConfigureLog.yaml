@@ -82,35 +82,4 @@ events:
       This is free software; see the source for copying conditions.  There is NO
       warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
       
-  -
-    kind: "try_compile-v1"
-    backtrace:
-      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
-      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
-      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
-      - "/home/bindere/iomico/intermediate/zephyr/cmake/modules/extensions.cmake:2421 (check_c_compiler_flag)"
-      - "/home/bindere/iomico/intermediate/zephyr/cmake/modules/extensions.cmake:1199 (check_compiler_flag)"
-      - "/home/bindere/iomico/intermediate/zephyr/cmake/modules/extensions.cmake:2460 (zephyr_check_compiler_flag)"
-      - "/home/bindere/iomico/intermediate/zephyr/cmake/modules/extensions.cmake:2436 (target_cc_option_fallback)"
-      - "/home/bindere/iomico/intermediate/zephyr/cmake/modules/extensions.cmake:156 (target_cc_option)"
-      - "/home/bindere/iomico/intermediate/zephyr/CMakeLists.txt:634 (zephyr_cc_option)"
-    directories:
-      source: "/home/bindere/iomico/intermediate/zephyr-intermediate/twister-out/native_sim_native/host_gnu/zephyr-intermediate/tests/temp_alarm/homework.unit.temp_alarm.ordered/CMakeFiles/CMakeScratch/TryCompile-JH7A34"
-      binary: "/home/bindere/iomico/intermediate/zephyr-intermediate/twister-out/native_sim_native/host_gnu/zephyr-intermediate/tests/temp_alarm/homework.unit.temp_alarm.ordered/CMakeFiles/CMakeScratch/TryCompile-JH7A34"
-    cmakeVariables:
-      CMAKE_C_FLAGS: ""
-      CMAKE_C_FLAGS_DEBUG: "-g"
-      CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/home/bindere/iomico/intermediate/zephyr/cmake/modules"
-    buildResult:
-      variable: "check_fmacro_prefix_map__home_bindere_iomico_intermediate_zephyr_intermediate_tests_temp_alarm_CMAKE_SOURCE_DIR_C__fuse_ld_bfd"
-      cached: true
-      stdout: |
-        Change Dir: '/home/bindere/iomico/intermediate/zephyr-intermediate/twister-out/native_sim_native/host_gnu/zephyr-intermediate/tests/temp_alarm/homework.unit.temp_alarm.ordered/CMakeFiles/CMakeScratch/TryCompile-JH7A34'
-        
-        Run Build Command(s): /usr/bin/ninja -v cmTC_ebd21
-        [1/2] /usr/bin/gcc -Dcheck_fmacro_prefix_map__home_bindere_iomico_intermediate_zephyr_intermediate_tests_temp_alarm_CMAKE_SOURCE_DIR_C__fuse_ld_bfd  -fuse-ld=bfd   -fmacro-prefix-map=/home/bindere/iomico/intermediate/zephyr-intermediate/tests/temp_alarm=CMAKE_SOURCE_DIR -o CMakeFiles/cmTC_ebd21.dir/src.c.obj -c /home/bindere/iomico/intermediate/zephyr-intermediate/twister-out/native_sim_native/host_gnu/zephyr-intermediate/tests/temp_alarm/homework.unit.temp_alarm.ordered/CMakeFiles/CMakeScratch/TryCompile-JH7A34/src.c
-        [2/2] : && /usr/bin/gcc -fuse-ld=bfd  CMakeFiles/cmTC_ebd21.dir/src.c.obj -o cmTC_ebd21   && :
-        
-      exitCode: 0
 ...

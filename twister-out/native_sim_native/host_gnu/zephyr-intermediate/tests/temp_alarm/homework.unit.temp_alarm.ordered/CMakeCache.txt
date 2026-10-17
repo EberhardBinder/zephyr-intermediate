@@ -361,7 +361,7 @@ SOC_FULL_DIR:PATH=/home/bindere/iomico/intermediate/zephyr/soc/native/inf_clock
 TC_NAME:UNINITIALIZED=homework.unit.temp_alarm.ordered
 
 //No help, variable specified on the command line.
-TC_RUNID:UNINITIALIZED=1f4b64421e992b1b0eda1996355e8882
+TC_RUNID:UNINITIALIZED=3072c7385a4374462c2800125128663b
 
 //True if toolchain supports libstdc++
 TOOLCHAIN_HAS_GLIBCXX:BOOL=ON
@@ -603,6 +603,4 @@ _Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;12;3;64;;cpython-312-x86_64-li
 _Python3_INTERPRETER_SIGNATURE:INTERNAL=a15e70e0d325e31685a3528fe009c5bd
 //NumPy reason failure
 _Python3_NumPy_REASON_FAILURE:INTERNAL=
-//Test check_fmacro_prefix_map__home_bindere_iomico_intermediate_zephyr_intermediate_tests_temp_alarm_CMAKE_SOURCE_DIR_C__fuse_ld_bfd
-check_fmacro_prefix_map__home_bindere_iomico_intermediate_zephyr_intermediate_tests_temp_alarm_CMAKE_SOURCE_DIR_C__fuse_ld_bfd:INTERNAL=1
 
