@@ -1,0 +1,47 @@
+cmake:
+  application:
+    configuration-dir: '/home/bindere/iomico/intermediate/zephyr-intermediate/tests/temp_alarm'
+    source-dir: '/home/bindere/iomico/intermediate/zephyr-intermediate/tests/temp_alarm'
+  board:
+    name: 'native_sim'
+    path:
+     - '/home/bindere/iomico/intermediate/zephyr/boards/native/native_sim'
+    qualifiers: 'native'
+    revision: ''
+  devicetree:
+    bindings-dirs:
+     - '/home/bindere/iomico/intermediate/zephyr/dts/bindings'
+    files:
+     - '/home/bindere/iomico/intermediate/zephyr/boards/native/native_sim/native_sim.dts'
+    include-dirs:
+     - '/home/bindere/iomico/intermediate/modules/hal/nxp/dts'
+     - '/home/bindere/iomico/intermediate/modules/hal/stm32/dts'
+     - '/home/bindere/iomico/intermediate/zephyr-intermediate/tests/temp_alarm/include'
+     - '/home/bindere/iomico/intermediate/zephyr/include'
+     - '/home/bindere/iomico/intermediate/zephyr/include/zephyr'
+     - '/home/bindere/iomico/intermediate/zephyr/dts/common'
+     - '/home/bindere/iomico/intermediate/zephyr/dts/vendor'
+     - '/home/bindere/iomico/intermediate/zephyr/dts/rx'
+     - '/home/bindere/iomico/intermediate/zephyr/dts/x86'
+     - '/home/bindere/iomico/intermediate/zephyr/dts/xtensa'
+     - '/home/bindere/iomico/intermediate/zephyr/dts/sparc'
+     - '/home/bindere/iomico/intermediate/zephyr/dts/riscv'
+     - '/home/bindere/iomico/intermediate/zephyr/dts/posix'
+     - '/home/bindere/iomico/intermediate/zephyr/dts/arm64'
+     - '/home/bindere/iomico/intermediate/zephyr/dts/arm'
+     - '/home/bindere/iomico/intermediate/zephyr/dts/arc'
+     - '/home/bindere/iomico/intermediate/zephyr/dts'
+  kconfig:
+    files:
+     - '/home/bindere/iomico/intermediate/zephyr/boards/native/native_sim/native_sim_defconfig'
+     - '/home/bindere/iomico/intermediate/zephyr-intermediate/tests/temp_alarm/prj.conf'
+     - '/home/bindere/iomico/intermediate/zephyr-intermediate/twister-out/native_sim_native/host_gnu/zephyr-intermediate/tests/temp_alarm/homework.unit.temp_alarm.ordered/zephyr/misc/generated/extra_kconfig_options.conf'
+    user-files:
+     - '/home/bindere/iomico/intermediate/zephyr-intermediate/tests/temp_alarm/prj.conf'
+  toolchain:
+    name: 'host'
+    path: ''
+  zephyr:
+    version: '4.4.0'
+    zephyr-base: '/home/bindere/iomico/intermediate/zephyr'
+version: '0.1.0'
