@@ -86,8 +86,6 @@ ZTEST(temp_alarm_check, test_below_threshold)
 		      status.last_temp);
 	zassert_false(status.is_alarming, "is_alarming must be false at 20");
 
-	ztest_test_skip();
-
 }
 
 ZTEST(temp_alarm_check, test_at_threshold)
@@ -105,8 +103,6 @@ ZTEST(temp_alarm_check, test_at_threshold)
 	zassert_false(status.is_alarming, "is_alarming must be false at 30");
 	zassert_equal(status.alarm_count, 0U, "alarm_count must be 0 at 30, got %u",
 		      status.alarm_count);
-
-	ztest_test_skip();
 
 }
 
@@ -127,8 +123,6 @@ ZTEST(temp_alarm_check, test_above_threshold)
 	zassert_true(status.is_alarming, "is_alarming must be true at 40");
 	zassert_equal(status.alarm_count, 1U, "alarm_count must be 1 at 40, got %u",
 		      status.alarm_count);
-
-	ztest_test_skip();
 
 }
 
@@ -163,8 +157,6 @@ ZTEST(temp_alarm_threshold, test_new_threshold_clears_alarm)
 	zassert_false(status.is_alarming, "is_alarming must be false");
 	zassert_equal(status.alarm_count, 1U, "alarm_count must be 1, got %u",
 		      status.alarm_count);
-
-	ztest_test_skip();
 
 }
 
@@ -205,8 +197,5 @@ ZTEST(temp_alarm_reset, test_reset_clears_state)
 		      status.alarm_count);
 	zassert_equal(status.last_temp, 40, "last_temp must be 40, got %d",
 		      status.last_temp);
-
-
-	ztest_test_skip();
 
 }

@@ -1,23 +1,13 @@
 <testsuites>
-	<testsuite name="native_sim/native" timestamp="2026-10-17T23:48:25.120919" time="0.1" tests="26" failures="0" errors="0" skipped="24">
+	<testsuite name="native_sim/native" timestamp="2026-10-20T13:01:17.431894" time="0.1" tests="26" failures="0" errors="0" skipped="14">
 		<properties>
 			<property name="version" value="v4.4.0" />
 		</properties>
-		<testcase classname="homework.unit.temp_alarm" name="homework.unit.temp_alarm.temp_alarm_reset.reset_clears_state" time="0">
-			<skipped type="skipped" message="ztest skip" />
-		</testcase>
-		<testcase classname="homework.unit.temp_alarm" name="homework.unit.temp_alarm.temp_alarm_threshold.new_threshold_clears_alarm" time="0">
-			<skipped type="skipped" message="ztest skip" />
-		</testcase>
-		<testcase classname="homework.unit.temp_alarm" name="homework.unit.temp_alarm.temp_alarm_check.above_threshold" time="0">
-			<skipped type="skipped" message="ztest skip" />
-		</testcase>
-		<testcase classname="homework.unit.temp_alarm" name="homework.unit.temp_alarm.temp_alarm_check.at_threshold" time="0">
-			<skipped type="skipped" message="ztest skip" />
-		</testcase>
-		<testcase classname="homework.unit.temp_alarm" name="homework.unit.temp_alarm.temp_alarm_check.below_threshold" time="0">
-			<skipped type="skipped" message="ztest skip" />
-		</testcase>
+		<testcase classname="homework.unit.temp_alarm" name="homework.unit.temp_alarm.temp_alarm_reset.reset_clears_state" time="0.00" />
+		<testcase classname="homework.unit.temp_alarm" name="homework.unit.temp_alarm.temp_alarm_threshold.new_threshold_clears_alarm" time="0.00" />
+		<testcase classname="homework.unit.temp_alarm" name="homework.unit.temp_alarm.temp_alarm_check.above_threshold" time="0.00" />
+		<testcase classname="homework.unit.temp_alarm" name="homework.unit.temp_alarm.temp_alarm_check.at_threshold" time="0.00" />
+		<testcase classname="homework.unit.temp_alarm" name="homework.unit.temp_alarm.temp_alarm_check.below_threshold" time="0.00" />
 		<testcase classname="homework.unit.temp_alarm" name="homework.unit.temp_alarm.temp_alarm_get_status.status_after_init" time="0.00" />
 		<testcase classname="homework.unit.temp_alarm" name="homework.unit.temp_alarm.temp_alarm_invalid_input.set_threshold_out_of_range" time="0">
 			<skipped type="skipped" message="ztest skip" />
@@ -40,21 +30,11 @@
 		<testcase classname="homework.unit.temp_alarm" name="homework.unit.temp_alarm.temp_alarm_sensor_errors.fetch_error_propagates" time="0">
 			<skipped type="skipped" message="ztest skip" />
 		</testcase>
-		<testcase classname="homework.unit.temp_alarm.ordered" name="homework.unit.temp_alarm.ordered.temp_alarm_reset.reset_clears_state" time="0">
-			<skipped type="skipped" message="ztest skip" />
-		</testcase>
-		<testcase classname="homework.unit.temp_alarm.ordered" name="homework.unit.temp_alarm.ordered.temp_alarm_threshold.new_threshold_clears_alarm" time="0">
-			<skipped type="skipped" message="ztest skip" />
-		</testcase>
-		<testcase classname="homework.unit.temp_alarm.ordered" name="homework.unit.temp_alarm.ordered.temp_alarm_check.above_threshold" time="0">
-			<skipped type="skipped" message="ztest skip" />
-		</testcase>
-		<testcase classname="homework.unit.temp_alarm.ordered" name="homework.unit.temp_alarm.ordered.temp_alarm_check.at_threshold" time="0">
-			<skipped type="skipped" message="ztest skip" />
-		</testcase>
-		<testcase classname="homework.unit.temp_alarm.ordered" name="homework.unit.temp_alarm.ordered.temp_alarm_check.below_threshold" time="0">
-			<skipped type="skipped" message="ztest skip" />
-		</testcase>
+		<testcase classname="homework.unit.temp_alarm.ordered" name="homework.unit.temp_alarm.ordered.temp_alarm_reset.reset_clears_state" time="0.00" />
+		<testcase classname="homework.unit.temp_alarm.ordered" name="homework.unit.temp_alarm.ordered.temp_alarm_threshold.new_threshold_clears_alarm" time="0.00" />
+		<testcase classname="homework.unit.temp_alarm.ordered" name="homework.unit.temp_alarm.ordered.temp_alarm_check.above_threshold" time="0.00" />
+		<testcase classname="homework.unit.temp_alarm.ordered" name="homework.unit.temp_alarm.ordered.temp_alarm_check.at_threshold" time="0.00" />
+		<testcase classname="homework.unit.temp_alarm.ordered" name="homework.unit.temp_alarm.ordered.temp_alarm_check.below_threshold" time="0.00" />
 		<testcase classname="homework.unit.temp_alarm.ordered" name="homework.unit.temp_alarm.ordered.temp_alarm_get_status.status_after_init" time="0.00" />
 		<testcase classname="homework.unit.temp_alarm.ordered" name="homework.unit.temp_alarm.ordered.temp_alarm_invalid_input.set_threshold_out_of_range" time="0">
 			<skipped type="skipped" message="ztest skip" />

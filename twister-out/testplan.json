@@ -4,7 +4,7 @@
         "zephyr_version":"v4.4.0",
         "toolchain":"zephyr/gnu",
         "commit_date":"2026-04-14T14:45:49-05:00",
-        "run_date":"2026-10-17T21:48:24+00:00",
+        "run_date":"2026-10-20T11:01:16+00:00",
         "options":{
             "help":null,
             "zephyr_base":null,
@@ -24,7 +24,7 @@
             "arch":"posix",
             "platform":"native_sim/native",
             "path":"../zephyr-intermediate/tests/temp_alarm",
-            "run_id":"8a534acc1a8609328d222d0b6b57829d",
+            "run_id":"00f985a1808957ebcbb29642fbe529f3",
             "runnable":true,
             "retries":0,
             "toolchain":"host/gnu",
@@ -33,15 +33,7 @@
             "build_time":"0.00",
             "testcases":[
                 {
-                    "identifier":"homework.unit.temp_alarm.temp_alarm_sensor_errors.fail_then_recover",
-                    "status":"None"
-                },
-                {
-                    "identifier":"homework.unit.temp_alarm.temp_alarm_invalid_input.get_status_null",
-                    "status":"None"
-                },
-                {
-                    "identifier":"homework.unit.temp_alarm.temp_alarm_sensor_errors.fetch_error_propagates",
+                    "identifier":"homework.unit.temp_alarm.temp_alarm_get_status.status_after_init",
                     "status":"None"
                 },
                 {
@@ -53,15 +45,11 @@
                     "status":"None"
                 },
                 {
-                    "identifier":"homework.unit.temp_alarm.temp_alarm_check.below_threshold",
+                    "identifier":"homework.unit.temp_alarm.temp_alarm_invalid_input.init_threshold_out_of_range",
                     "status":"None"
                 },
                 {
-                    "identifier":"homework.unit.temp_alarm.temp_alarm_get_status.status_after_init",
-                    "status":"None"
-                },
-                {
-                    "identifier":"homework.unit.temp_alarm.temp_alarm_check.at_threshold",
+                    "identifier":"homework.unit.temp_alarm.temp_alarm_invalid_input.get_status_null",
                     "status":"None"
                 },
                 {
@@ -69,11 +57,7 @@
                     "status":"None"
                 },
                 {
-                    "identifier":"homework.unit.temp_alarm.temp_alarm_invalid_input.set_threshold_out_of_range",
-                    "status":"None"
-                },
-                {
-                    "identifier":"homework.unit.temp_alarm.temp_alarm_invalid_input.init_threshold_out_of_range",
+                    "identifier":"homework.unit.temp_alarm.temp_alarm_sensor_errors.fail_then_recover",
                     "status":"None"
                 },
                 {
@@ -81,7 +65,23 @@
                     "status":"None"
                 },
                 {
+                    "identifier":"homework.unit.temp_alarm.temp_alarm_check.below_threshold",
+                    "status":"None"
+                },
+                {
+                    "identifier":"homework.unit.temp_alarm.temp_alarm_invalid_input.set_threshold_out_of_range",
+                    "status":"None"
+                },
+                {
                     "identifier":"homework.unit.temp_alarm.temp_alarm_threshold.new_threshold_clears_alarm",
+                    "status":"None"
+                },
+                {
+                    "identifier":"homework.unit.temp_alarm.temp_alarm_sensor_errors.fetch_error_propagates",
+                    "status":"None"
+                },
+                {
+                    "identifier":"homework.unit.temp_alarm.temp_alarm_check.at_threshold",
                     "status":"None"
                 }
             ]
@@ -91,7 +91,7 @@
             "arch":"posix",
             "platform":"native_sim/native",
             "path":"../zephyr-intermediate/tests/temp_alarm",
-            "run_id":"3072c7385a4374462c2800125128663b",
+            "run_id":"d44ec327ac946ea42a886215184bb570",
             "runnable":true,
             "retries":0,
             "toolchain":"host/gnu",
@@ -100,15 +100,7 @@
             "build_time":"0.00",
             "testcases":[
                 {
-                    "identifier":"homework.unit.temp_alarm.ordered.temp_alarm_sensor_errors.fail_then_recover",
-                    "status":"None"
-                },
-                {
-                    "identifier":"homework.unit.temp_alarm.ordered.temp_alarm_invalid_input.get_status_null",
-                    "status":"None"
-                },
-                {
-                    "identifier":"homework.unit.temp_alarm.ordered.temp_alarm_sensor_errors.fetch_error_propagates",
+                    "identifier":"homework.unit.temp_alarm.ordered.temp_alarm_get_status.status_after_init",
                     "status":"None"
                 },
                 {
@@ -120,15 +112,11 @@
                     "status":"None"
                 },
                 {
-                    "identifier":"homework.unit.temp_alarm.ordered.temp_alarm_check.below_threshold",
+                    "identifier":"homework.unit.temp_alarm.ordered.temp_alarm_invalid_input.init_threshold_out_of_range",
                     "status":"None"
                 },
                 {
-                    "identifier":"homework.unit.temp_alarm.ordered.temp_alarm_get_status.status_after_init",
-                    "status":"None"
-                },
-                {
-                    "identifier":"homework.unit.temp_alarm.ordered.temp_alarm_check.at_threshold",
+                    "identifier":"homework.unit.temp_alarm.ordered.temp_alarm_invalid_input.get_status_null",
                     "status":"None"
                 },
                 {
@@ -136,11 +124,7 @@
                     "status":"None"
                 },
                 {
-                    "identifier":"homework.unit.temp_alarm.ordered.temp_alarm_invalid_input.set_threshold_out_of_range",
-                    "status":"None"
-                },
-                {
-                    "identifier":"homework.unit.temp_alarm.ordered.temp_alarm_invalid_input.init_threshold_out_of_range",
+                    "identifier":"homework.unit.temp_alarm.ordered.temp_alarm_sensor_errors.fail_then_recover",
                     "status":"None"
                 },
                 {
@@ -148,7 +132,23 @@
                     "status":"None"
                 },
                 {
+                    "identifier":"homework.unit.temp_alarm.ordered.temp_alarm_check.below_threshold",
+                    "status":"None"
+                },
+                {
+                    "identifier":"homework.unit.temp_alarm.ordered.temp_alarm_invalid_input.set_threshold_out_of_range",
+                    "status":"None"
+                },
+                {
                     "identifier":"homework.unit.temp_alarm.ordered.temp_alarm_threshold.new_threshold_clears_alarm",
+                    "status":"None"
+                },
+                {
+                    "identifier":"homework.unit.temp_alarm.ordered.temp_alarm_sensor_errors.fetch_error_propagates",
+                    "status":"None"
+                },
+                {
+                    "identifier":"homework.unit.temp_alarm.ordered.temp_alarm_check.at_threshold",
                     "status":"None"
                 }
             ]

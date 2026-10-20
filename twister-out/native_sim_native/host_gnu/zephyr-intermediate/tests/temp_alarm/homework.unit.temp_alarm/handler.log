@@ -124,7 +124,7 @@ START - test_reset_clears_state
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
 [00:00:00.000,000] <inf> temp_alarm: Alarm state reset
- SKIP - test_reset_clears_state in 0.000 seconds
+ PASS - test_reset_clears_state in 0.000 seconds
 ===================================================================
 START - test_reset_clears_state
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
@@ -132,7 +132,7 @@ START - test_reset_clears_state
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
 [00:00:00.000,000] <inf> temp_alarm: Alarm state reset
- SKIP - test_reset_clears_state in 0.000 seconds
+ PASS - test_reset_clears_state in 0.000 seconds
 ===================================================================
 START - test_reset_clears_state
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
@@ -140,7 +140,7 @@ START - test_reset_clears_state
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
 [00:00:00.000,000] <inf> temp_alarm: Alarm state reset
- SKIP - test_reset_clears_state in 0.000 seconds
+ PASS - test_reset_clears_state in 0.000 seconds
 ===================================================================
 TESTSUITE temp_alarm_reset succeeded
 Running TESTSUITE temp_alarm_reset
@@ -151,7 +151,7 @@ START - test_reset_clears_state
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
 [00:00:00.000,000] <inf> temp_alarm: Alarm state reset
- SKIP - test_reset_clears_state in 0.000 seconds
+ PASS - test_reset_clears_state in 0.000 seconds
 ===================================================================
 START - test_reset_clears_state
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
@@ -159,7 +159,7 @@ START - test_reset_clears_state
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
 [00:00:00.000,000] <inf> temp_alarm: Alarm state reset
- SKIP - test_reset_clears_state in 0.000 seconds
+ PASS - test_reset_clears_state in 0.000 seconds
 ===================================================================
 START - test_reset_clears_state
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
@@ -167,7 +167,7 @@ START - test_reset_clears_state
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
 [00:00:00.000,000] <inf> temp_alarm: Alarm state reset
- SKIP - test_reset_clears_state in 0.000 seconds
+ PASS - test_reset_clears_state in 0.000 seconds
 ===================================================================
 TESTSUITE temp_alarm_reset succeeded
 Running TESTSUITE temp_alarm_reset
@@ -178,7 +178,7 @@ START - test_reset_clears_state
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
 [00:00:00.000,000] <inf> temp_alarm: Alarm state reset
- SKIP - test_reset_clears_state in 0.000 seconds
+ PASS - test_reset_clears_state in 0.000 seconds
 ===================================================================
 START - test_reset_clears_state
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
@@ -186,7 +186,7 @@ START - test_reset_clears_state
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
 [00:00:00.000,000] <inf> temp_alarm: Alarm state reset
- SKIP - test_reset_clears_state in 0.000 seconds
+ PASS - test_reset_clears_state in 0.000 seconds
 ===================================================================
 START - test_reset_clears_state
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
@@ -194,7 +194,7 @@ START - test_reset_clears_state
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
 [00:00:00.000,000] <inf> temp_alarm: Alarm state reset
- SKIP - test_reset_clears_state in 0.000 seconds
+ PASS - test_reset_clears_state in 0.000 seconds
 ===================================================================
 TESTSUITE temp_alarm_reset succeeded
 Running TESTSUITE temp_alarm_get_status
@@ -248,19 +248,19 @@ START - test_new_threshold_clears_alarm
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
 [00:00:00.000,000] <inf> temp_alarm: Threshold updated to 50 C
- SKIP - test_new_threshold_clears_alarm in 0.000 seconds
+ PASS - test_new_threshold_clears_alarm in 0.000 seconds
 ===================================================================
 START - test_new_threshold_clears_alarm
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
 [00:00:00.000,000] <inf> temp_alarm: Threshold updated to 50 C
- SKIP - test_new_threshold_clears_alarm in 0.000 seconds
+ PASS - test_new_threshold_clears_alarm in 0.000 seconds
 ===================================================================
 START - test_new_threshold_clears_alarm
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
 [00:00:00.000,000] <inf> temp_alarm: Threshold updated to 50 C
- SKIP - test_new_threshold_clears_alarm in 0.000 seconds
+ PASS - test_new_threshold_clears_alarm in 0.000 seconds
 ===================================================================
 TESTSUITE temp_alarm_threshold succeeded
 Running TESTSUITE temp_alarm_threshold
@@ -269,19 +269,19 @@ START - test_new_threshold_clears_alarm
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
 [00:00:00.000,000] <inf> temp_alarm: Threshold updated to 50 C
- SKIP - test_new_threshold_clears_alarm in 0.000 seconds
+ PASS - test_new_threshold_clears_alarm in 0.000 seconds
 ===================================================================
 START - test_new_threshold_clears_alarm
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
 [00:00:00.000,000] <inf> temp_alarm: Threshold updated to 50 C
- SKIP - test_new_threshold_clears_alarm in 0.000 seconds
+ PASS - test_new_threshold_clears_alarm in 0.000 seconds
 ===================================================================
 START - test_new_threshold_clears_alarm
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
 [00:00:00.000,000] <inf> temp_alarm: Threshold updated to 50 C
- SKIP - test_new_threshold_clears_alarm in 0.000 seconds
+ PASS - test_new_threshold_clears_alarm in 0.000 seconds
 ===================================================================
 TESTSUITE temp_alarm_threshold succeeded
 Running TESTSUITE temp_alarm_threshold
@@ -290,145 +290,145 @@ START - test_new_threshold_clears_alarm
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
 [00:00:00.000,000] <inf> temp_alarm: Threshold updated to 50 C
- SKIP - test_new_threshold_clears_alarm in 0.000 seconds
+ PASS - test_new_threshold_clears_alarm in 0.000 seconds
 ===================================================================
 START - test_new_threshold_clears_alarm
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
 [00:00:00.000,000] <inf> temp_alarm: Threshold updated to 50 C
- SKIP - test_new_threshold_clears_alarm in 0.000 seconds
+ PASS - test_new_threshold_clears_alarm in 0.000 seconds
 ===================================================================
 START - test_new_threshold_clears_alarm
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
 [00:00:00.000,000] <inf> temp_alarm: Threshold updated to 50 C
- SKIP - test_new_threshold_clears_alarm in 0.000 seconds
+ PASS - test_new_threshold_clears_alarm in 0.000 seconds
 ===================================================================
 TESTSUITE temp_alarm_threshold succeeded
 Running TESTSUITE temp_alarm_check
 ===================================================================
 START - test_below_threshold
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
- SKIP - test_below_threshold in 0.000 seconds
+ PASS - test_below_threshold in 0.000 seconds
 ===================================================================
 START - test_at_threshold
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
- SKIP - test_at_threshold in 0.000 seconds
+ PASS - test_at_threshold in 0.000 seconds
 ===================================================================
 START - test_above_threshold
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
- SKIP - test_above_threshold in 0.000 seconds
+ PASS - test_above_threshold in 0.000 seconds
 ===================================================================
 START - test_at_threshold
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
- SKIP - test_at_threshold in 0.000 seconds
+ PASS - test_at_threshold in 0.000 seconds
 ===================================================================
 START - test_below_threshold
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
- SKIP - test_below_threshold in 0.000 seconds
+ PASS - test_below_threshold in 0.000 seconds
 ===================================================================
 START - test_above_threshold
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
- SKIP - test_above_threshold in 0.000 seconds
+ PASS - test_above_threshold in 0.000 seconds
 ===================================================================
 START - test_below_threshold
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
- SKIP - test_below_threshold in 0.000 seconds
+ PASS - test_below_threshold in 0.000 seconds
 ===================================================================
 START - test_above_threshold
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
- SKIP - test_above_threshold in 0.000 seconds
+ PASS - test_above_threshold in 0.000 seconds
 ===================================================================
 START - test_at_threshold
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
- SKIP - test_at_threshold in 0.000 seconds
+ PASS - test_at_threshold in 0.000 seconds
 ===================================================================
 TESTSUITE temp_alarm_check succeeded
 Running TESTSUITE temp_alarm_check
 ===================================================================
 START - test_at_threshold
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
- SKIP - test_at_threshold in 0.000 seconds
+ PASS - test_at_threshold in 0.000 seconds
 ===================================================================
 START - test_above_threshold
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
- SKIP - test_above_threshold in 0.000 seconds
+ PASS - test_above_threshold in 0.000 seconds
 ===================================================================
 START - test_below_threshold
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
- SKIP - test_below_threshold in 0.000 seconds
+ PASS - test_below_threshold in 0.000 seconds
 ===================================================================
 START - test_at_threshold
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
- SKIP - test_at_threshold in 0.000 seconds
+ PASS - test_at_threshold in 0.000 seconds
 ===================================================================
 START - test_above_threshold
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
- SKIP - test_above_threshold in 0.000 seconds
+ PASS - test_above_threshold in 0.000 seconds
 ===================================================================
 START - test_below_threshold
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
- SKIP - test_below_threshold in 0.000 seconds
+ PASS - test_below_threshold in 0.000 seconds
 ===================================================================
 START - test_above_threshold
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
- SKIP - test_above_threshold in 0.000 seconds
+ PASS - test_above_threshold in 0.000 seconds
 ===================================================================
 START - test_below_threshold
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
- SKIP - test_below_threshold in 0.000 seconds
+ PASS - test_below_threshold in 0.000 seconds
 ===================================================================
 START - test_at_threshold
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
- SKIP - test_at_threshold in 0.000 seconds
+ PASS - test_at_threshold in 0.000 seconds
 ===================================================================
 TESTSUITE temp_alarm_check succeeded
 Running TESTSUITE temp_alarm_check
 ===================================================================
 START - test_at_threshold
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
- SKIP - test_at_threshold in 0.000 seconds
+ PASS - test_at_threshold in 0.000 seconds
 ===================================================================
 START - test_below_threshold
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
- SKIP - test_below_threshold in 0.000 seconds
+ PASS - test_below_threshold in 0.000 seconds
 ===================================================================
 START - test_above_threshold
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
- SKIP - test_above_threshold in 0.000 seconds
+ PASS - test_above_threshold in 0.000 seconds
 ===================================================================
 START - test_below_threshold
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
- SKIP - test_below_threshold in 0.000 seconds
+ PASS - test_below_threshold in 0.000 seconds
 ===================================================================
 START - test_at_threshold
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
- SKIP - test_at_threshold in 0.000 seconds
+ PASS - test_at_threshold in 0.000 seconds
 ===================================================================
 START - test_above_threshold
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
- SKIP - test_above_threshold in 0.000 seconds
+ PASS - test_above_threshold in 0.000 seconds
 ===================================================================
 START - test_at_threshold
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
- SKIP - test_at_threshold in 0.000 seconds
+ PASS - test_at_threshold in 0.000 seconds
 ===================================================================
 START - test_above_threshold
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
 [00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=40 > threshold=30
- SKIP - test_above_threshold in 0.000 seconds
+ PASS - test_above_threshold in 0.000 seconds
 ===================================================================
 START - test_below_threshold
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
- SKIP - test_below_threshold in 0.000 seconds
+ PASS - test_below_threshold in 0.000 seconds
 ===================================================================
 TESTSUITE temp_alarm_check succeeded
 Running TESTSUITE temp_alarm_invalid_input
@@ -587,10 +587,10 @@ TESTSUITE temp_alarm_invalid_input succeeded
 
 ------ TESTSUITE SUMMARY START ------
 
-SUITE SKIP -   0.00% [temp_alarm_check]: pass = 0, fail = 0, skip = 3, total = 3 duration = 0.000 seconds
- - SKIP - [temp_alarm_check.test_above_threshold] duration = 0.000 seconds
- - SKIP - [temp_alarm_check.test_at_threshold] duration = 0.000 seconds
- - SKIP - [temp_alarm_check.test_below_threshold] duration = 0.000 seconds
+SUITE PASS - 100.00% [temp_alarm_check]: pass = 3, fail = 0, skip = 0, total = 3 duration = 0.000 seconds
+ - PASS - [temp_alarm_check.test_above_threshold] duration = 0.000 seconds
+ - PASS - [temp_alarm_check.test_at_threshold] duration = 0.000 seconds
+ - PASS - [temp_alarm_check.test_below_threshold] duration = 0.000 seconds
 
 SUITE PASS - 100.00% [temp_alarm_get_status]: pass = 1, fail = 0, skip = 0, total = 1 duration = 0.000 seconds
  - PASS - [temp_alarm_get_status.test_status_after_init] duration = 0.000 seconds
@@ -601,19 +601,19 @@ SUITE SKIP -   0.00% [temp_alarm_invalid_input]: pass = 0, fail = 0, skip = 4, t
  - SKIP - [temp_alarm_invalid_input.test_init_without_device] duration = 0.000 seconds
  - SKIP - [temp_alarm_invalid_input.test_set_threshold_out_of_range] duration = 0.000 seconds
 
-SUITE SKIP -   0.00% [temp_alarm_reset]: pass = 0, fail = 0, skip = 1, total = 1 duration = 0.000 seconds
- - SKIP - [temp_alarm_reset.test_reset_clears_state] duration = 0.000 seconds
+SUITE PASS - 100.00% [temp_alarm_reset]: pass = 1, fail = 0, skip = 0, total = 1 duration = 0.000 seconds
+ - PASS - [temp_alarm_reset.test_reset_clears_state] duration = 0.000 seconds
 
 SUITE SKIP -   0.00% [temp_alarm_sensor_errors]: pass = 0, fail = 0, skip = 3, total = 3 duration = 0.000 seconds
  - SKIP - [temp_alarm_sensor_errors.test_channel_get_error_propagates] duration = 0.000 seconds
  - SKIP - [temp_alarm_sensor_errors.test_fail_then_recover] duration = 0.000 seconds
  - SKIP - [temp_alarm_sensor_errors.test_fetch_error_propagates] duration = 0.000 seconds
 
-SUITE SKIP -   0.00% [temp_alarm_threshold]: pass = 0, fail = 0, skip = 1, total = 1 duration = 0.000 seconds
- - SKIP - [temp_alarm_threshold.test_new_threshold_clears_alarm] duration = 0.000 seconds
+SUITE PASS - 100.00% [temp_alarm_threshold]: pass = 1, fail = 0, skip = 0, total = 1 duration = 0.000 seconds
+ - PASS - [temp_alarm_threshold.test_new_threshold_clears_alarm] duration = 0.000 seconds
 
 ------ TESTSUITE SUMMARY END ------
 
 ===================================================================
-RunID: 8a534acc1a8609328d222d0b6b57829d
+RunID: 00f985a1808957ebcbb29642fbe529f3
 PROJECT EXECUTION SUCCESSFUL
