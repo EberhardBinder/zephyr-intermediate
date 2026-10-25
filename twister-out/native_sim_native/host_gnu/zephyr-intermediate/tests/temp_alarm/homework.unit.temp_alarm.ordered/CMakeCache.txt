@@ -361,7 +361,7 @@ SOC_FULL_DIR:PATH=/home/bindere/iomico/intermediate/zephyr/soc/native/inf_clock
 TC_NAME:UNINITIALIZED=homework.unit.temp_alarm.ordered
 
 //No help, variable specified on the command line.
-TC_RUNID:UNINITIALIZED=d44ec327ac946ea42a886215184bb570
+TC_RUNID:UNINITIALIZED=9d5b969476f20824ce8f795eb257c28f
 
 //True if toolchain supports libstdc++
 TOOLCHAIN_HAS_GLIBCXX:BOOL=ON

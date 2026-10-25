@@ -4,7 +4,7 @@
         "zephyr_version":"v4.4.0",
         "toolchain":"zephyr/gnu",
         "commit_date":"2026-04-14T14:45:49-05:00",
-        "run_date":"2026-10-20T11:01:16+00:00",
+        "run_date":"2026-10-25T17:17:08+00:00",
         "options":{
             "help":null,
             "zephyr_base":null,
@@ -24,13 +24,13 @@
             "arch":"posix",
             "platform":"native_sim/native",
             "path":"../zephyr-intermediate/tests/temp_alarm",
-            "run_id":"00f985a1808957ebcbb29642fbe529f3",
+            "run_id":"fbe5652f76eb86c9c62b18a03afc3ab1",
             "runnable":true,
             "retries":0,
             "toolchain":"host/gnu",
             "status":"passed",
-            "execution_time":"0.08",
-            "build_time":"4.87",
+            "execution_time":"0.13",
+            "build_time":"10.67",
             "testcases":[
                 {
                     "identifier":"homework.unit.temp_alarm.temp_alarm_reset.reset_clears_state",
@@ -65,44 +65,37 @@
                 {
                     "identifier":"homework.unit.temp_alarm.temp_alarm_invalid_input.set_threshold_out_of_range",
                     "execution_time":"0.00",
-                    "status":"skipped",
-                    "reason":"ztest skip"
+                    "status":"passed"
                 },
                 {
                     "identifier":"homework.unit.temp_alarm.temp_alarm_invalid_input.init_threshold_out_of_range",
                     "execution_time":"0.00",
-                    "status":"skipped",
-                    "reason":"ztest skip"
+                    "status":"passed"
                 },
                 {
                     "identifier":"homework.unit.temp_alarm.temp_alarm_invalid_input.init_without_device",
                     "execution_time":"0.00",
-                    "status":"skipped",
-                    "reason":"ztest skip"
+                    "status":"passed"
                 },
                 {
                     "identifier":"homework.unit.temp_alarm.temp_alarm_invalid_input.get_status_null",
                     "execution_time":"0.00",
-                    "status":"skipped",
-                    "reason":"ztest skip"
+                    "status":"passed"
                 },
                 {
                     "identifier":"homework.unit.temp_alarm.temp_alarm_sensor_errors.fail_then_recover",
                     "execution_time":"0.00",
-                    "status":"skipped",
-                    "reason":"ztest skip"
+                    "status":"passed"
                 },
                 {
                     "identifier":"homework.unit.temp_alarm.temp_alarm_sensor_errors.channel_get_error_propagates",
                     "execution_time":"0.00",
-                    "status":"skipped",
-                    "reason":"ztest skip"
+                    "status":"passed"
                 },
                 {
                     "identifier":"homework.unit.temp_alarm.temp_alarm_sensor_errors.fetch_error_propagates",
                     "execution_time":"0.00",
-                    "status":"skipped",
-                    "reason":"ztest skip"
+                    "status":"passed"
                 }
             ]
         },
@@ -111,13 +104,13 @@
             "arch":"posix",
             "platform":"native_sim/native",
             "path":"../zephyr-intermediate/tests/temp_alarm",
-            "run_id":"d44ec327ac946ea42a886215184bb570",
+            "run_id":"9d5b969476f20824ce8f795eb257c28f",
             "runnable":true,
             "retries":0,
             "toolchain":"host/gnu",
             "status":"passed",
-            "execution_time":"0.02",
-            "build_time":"4.84",
+            "execution_time":"0.03",
+            "build_time":"10.51",
             "testcases":[
                 {
                     "identifier":"homework.unit.temp_alarm.ordered.temp_alarm_reset.reset_clears_state",
@@ -152,44 +145,37 @@
                 {
                     "identifier":"homework.unit.temp_alarm.ordered.temp_alarm_invalid_input.set_threshold_out_of_range",
                     "execution_time":"0.00",
-                    "status":"skipped",
-                    "reason":"ztest skip"
+                    "status":"passed"
                 },
                 {
                     "identifier":"homework.unit.temp_alarm.ordered.temp_alarm_invalid_input.init_threshold_out_of_range",
                     "execution_time":"0.00",
-                    "status":"skipped",
-                    "reason":"ztest skip"
+                    "status":"passed"
                 },
                 {
                     "identifier":"homework.unit.temp_alarm.ordered.temp_alarm_invalid_input.init_without_device",
                     "execution_time":"0.00",
-                    "status":"skipped",
-                    "reason":"ztest skip"
+                    "status":"passed"
                 },
                 {
                     "identifier":"homework.unit.temp_alarm.ordered.temp_alarm_invalid_input.get_status_null",
                     "execution_time":"0.00",
-                    "status":"skipped",
-                    "reason":"ztest skip"
+                    "status":"passed"
                 },
                 {
                     "identifier":"homework.unit.temp_alarm.ordered.temp_alarm_sensor_errors.fail_then_recover",
                     "execution_time":"0.00",
-                    "status":"skipped",
-                    "reason":"ztest skip"
+                    "status":"passed"
                 },
                 {
                     "identifier":"homework.unit.temp_alarm.ordered.temp_alarm_sensor_errors.channel_get_error_propagates",
                     "execution_time":"0.00",
-                    "status":"skipped",
-                    "reason":"ztest skip"
+                    "status":"passed"
                 },
                 {
                     "identifier":"homework.unit.temp_alarm.ordered.temp_alarm_sensor_errors.fetch_error_propagates",
                     "execution_time":"0.00",
-                    "status":"skipped",
-                    "reason":"ztest skip"
+                    "status":"passed"
                 }
             ]
         }
