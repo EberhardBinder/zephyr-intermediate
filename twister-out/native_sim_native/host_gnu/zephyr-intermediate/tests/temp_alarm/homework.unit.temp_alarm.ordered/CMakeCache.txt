@@ -342,9 +342,6 @@ NSI_DIR:PATH=/home/bindere/iomico/intermediate/zephyr/scripts/native_simulator
 //Path to a program.
 OPENOCD:FILEPATH=OPENOCD-NOTFOUND
 
-//No help, variable specified on the command line.
-OVERLAY_CONFIG:UNINITIALIZED=/home/bindere/iomico/intermediate/zephyr-intermediate/twister-out/native_sim_native/host_gnu/zephyr-intermediate/tests/temp_alarm/homework.unit.temp_alarm.ordered/twister/testsuite_extra.conf
-
 //Path to a program.
 PAHOLE:FILEPATH=PAHOLE-NOTFOUND
 
@@ -364,7 +361,7 @@ SOC_FULL_DIR:PATH=/home/bindere/iomico/intermediate/zephyr/soc/native/inf_clock
 TC_NAME:UNINITIALIZED=homework.unit.temp_alarm.ordered
 
 //No help, variable specified on the command line.
-TC_RUNID:UNINITIALIZED=eb0377afd477289f1d5b7bf9f1ce8d9b
+TC_RUNID:UNINITIALIZED=fc86ad3c61d8eca07f593ac669968761
 
 //True if toolchain supports libstdc++
 TOOLCHAIN_HAS_GLIBCXX:BOOL=ON

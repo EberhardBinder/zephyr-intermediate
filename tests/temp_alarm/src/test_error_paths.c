@@ -228,6 +228,8 @@ ZTEST(temp_alarm_invalid_input, test_set_threshold_out_of_range)
 
 	int ret;
 
+        struct temp_alarm_status status;
+
 	ret = temp_alarm_set_threshold(-1);
 
   	zassert_equal(ret, -EINVAL, "return value alarm_set_threshold must be %d, got %d",
@@ -237,5 +239,29 @@ ZTEST(temp_alarm_invalid_input, test_set_threshold_out_of_range)
 
   	zassert_equal(ret, -EINVAL, "return value alarm_set_threshold must be %d, got %d",
                       -EINVAL, ret);
+
+	sensor_fake_set_temperature(31);
+
+	ret = temp_alarm_check();
+
+  	zassert_equal(ret, 0, "return value alarm_check must be %d, got %d",
+                      0, ret);
+
+	zassert_ok(temp_alarm_get_status(&status), "get_status must succeed");
+
+  	zassert_equal(status.is_alarming, true, "is_alarming must be %d, got %d",
+                      true, status.is_alarming);
+
+	sensor_fake_set_temperature(30);
+
+	ret = temp_alarm_check();
+
+  	zassert_equal(ret, 0, "return value alarm_check must be %d, got %d",
+                      0, ret);
+
+	zassert_ok(temp_alarm_get_status(&status), "get_status must succeed");
+
+  	zassert_equal(status.is_alarming, false, "is_alarming must be %d, got %d",
+                      false, status.is_alarming);
 
 }

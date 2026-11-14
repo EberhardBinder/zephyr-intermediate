@@ -471,6 +471,7 @@ START - test_init_without_device
 ===================================================================
 START - test_set_threshold_out_of_range
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
+[00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=31 > threshold=30
  PASS - test_set_threshold_out_of_range in 0.000 seconds
 ===================================================================
 START - test_init_threshold_out_of_range
@@ -483,6 +484,7 @@ START - test_get_status_null
 ===================================================================
 START - test_set_threshold_out_of_range
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
+[00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=31 > threshold=30
  PASS - test_set_threshold_out_of_range in 0.000 seconds
 ===================================================================
 START - test_init_threshold_out_of_range
@@ -496,6 +498,7 @@ START - test_init_without_device
 ===================================================================
 START - test_set_threshold_out_of_range
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
+[00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=31 > threshold=30
  PASS - test_set_threshold_out_of_range in 0.000 seconds
 ===================================================================
 START - test_init_threshold_out_of_range
@@ -520,6 +523,7 @@ START - test_init_threshold_out_of_range
 ===================================================================
 START - test_set_threshold_out_of_range
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
+[00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=31 > threshold=30
  PASS - test_set_threshold_out_of_range in 0.000 seconds
 ===================================================================
 START - test_init_without_device
@@ -537,6 +541,7 @@ START - test_get_status_null
 ===================================================================
 START - test_set_threshold_out_of_range
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
+[00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=31 > threshold=30
  PASS - test_set_threshold_out_of_range in 0.000 seconds
 ===================================================================
 START - test_init_threshold_out_of_range
@@ -558,6 +563,7 @@ START - test_init_threshold_out_of_range
 ===================================================================
 START - test_set_threshold_out_of_range
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
+[00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=31 > threshold=30
  PASS - test_set_threshold_out_of_range in 0.000 seconds
 ===================================================================
 START - test_init_without_device
@@ -570,6 +576,7 @@ Running TESTSUITE temp_alarm_invalid_input
 ===================================================================
 START - test_set_threshold_out_of_range
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
+[00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=31 > threshold=30
  PASS - test_set_threshold_out_of_range in 0.000 seconds
 ===================================================================
 START - test_init_threshold_out_of_range
@@ -600,10 +607,12 @@ START - test_init_without_device
 ===================================================================
 START - test_set_threshold_out_of_range
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
+[00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=31 > threshold=30
  PASS - test_set_threshold_out_of_range in 0.000 seconds
 ===================================================================
 START - test_set_threshold_out_of_range
 [00:00:00.000,000] <inf> temp_alarm: Temperature alarm initialized (threshold=30 C)
+[00:00:00.000,000] <wrn> temp_alarm: Alarm! temp=31 > threshold=30
  PASS - test_set_threshold_out_of_range in 0.000 seconds
 ===================================================================
 START - test_init_without_device
@@ -651,5 +660,5 @@ SUITE PASS - 100.00% [temp_alarm_threshold]: pass = 1, fail = 0, skip = 0, total
 ------ TESTSUITE SUMMARY END ------
 
 ===================================================================
-RunID: 8376d297c2843d8df2562158d2d35eea
+RunID: 219ccc7b50e63b9c3954b5b9cb05f55e
 PROJECT EXECUTION SUCCESSFUL
