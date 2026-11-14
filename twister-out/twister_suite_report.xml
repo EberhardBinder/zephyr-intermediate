@@ -1,5 +1,5 @@
 <testsuites>
-	<testsuite name="homework.unit.temp_alarm" time="0.09" timestamp="2026-11-14T07:26:32.822771" tests="13" failures="0" errors="0" skipped="0">
+	<testsuite name="homework.unit.temp_alarm" time="0.09" timestamp="2026-11-14T07:34:15.204065" tests="13" failures="0" errors="0" skipped="0">
 		<properties>
 			<property name="version" value="v4.4.0" />
 			<property name="platform" value="native_sim/native" />
@@ -19,7 +19,7 @@
 		<testcase classname="homework.unit.temp_alarm" name="homework.unit.temp_alarm.temp_alarm_sensor_errors.channel_get_error_propagates" time="0.00" />
 		<testcase classname="homework.unit.temp_alarm" name="homework.unit.temp_alarm.temp_alarm_sensor_errors.fetch_error_propagates" time="0.00" />
 	</testsuite>
-	<testsuite name="homework.unit.temp_alarm.ordered" time="0.02" timestamp="2026-11-14T07:26:32.822771" tests="13" failures="0" errors="0" skipped="0">
+	<testsuite name="homework.unit.temp_alarm.ordered" time="0.02" timestamp="2026-11-14T07:34:15.204065" tests="13" failures="0" errors="0" skipped="0">
 		<properties>
 			<property name="version" value="v4.4.0" />
 			<property name="platform" value="native_sim/native" />
