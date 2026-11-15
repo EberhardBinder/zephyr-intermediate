@@ -1,96 +1,202 @@
 #include <zephyr/kernel.h>
 #include <zephyr/logging/log.h>
-
-#define PROTECTED_WORKER
-//#undef PROTECTED_WORKER
+#include <zephyr/task_wdt/task_wdt.h>
 
 LOG_MODULE_REGISTER(demo, LOG_LEVEL_DBG);
 
-#define STACK_SIZE      1024
-#define PRIO            5
-#define INCREMENTS      1000000   /* each thread increments this many times */
+#define STACK_SIZE 1024
 
-/* Shared state */
-static volatile uint32_t counter;
+/* ================================================================== */
+/*  Shared message type                                               */
+/* ================================================================== */
 
-static struct k_sem done_sem;
+struct sensor_msg {
+    uint32_t timestamp_ms;
+    int32_t value;
+    uint8_t seq;
+};
 
-static K_MUTEX_DEFINE(counter_mutex);
+/* ================================================================== */
+/*           Thread-to-thread pipeline                                */
+/* ================================================================== */
 
+#define SENSOR_QUEUE_DEPTH 6
+#define COUNT       12
 
-#ifdef PROTECTED_WORKER
+K_MSGQ_DEFINE(sensor_queue, sizeof(struct sensor_msg), SENSOR_QUEUE_DEPTH, 4);
 
-void worker_fn(void *p1, void *p2, void *p3)
-{
-    const char *name = k_thread_name_get(k_current_get());
+static K_SEM_DEFINE(prod_done, 0, 1);
+static K_SEM_DEFINE(cons_done, 0, 1);
 
-    for (int i = 0; i < INCREMENTS; i++) {
-        k_mutex_lock(&counter_mutex, K_FOREVER);
-        counter++;
-        k_mutex_unlock(&counter_mutex);
-    }
+static volatile bool prod_finished;
 
-    LOG_INF("[%s] finished", name);
-    k_sem_give(&done_sem);
+void my_callback(int channel_id, void *user_data)  {
+
+    LOG_INF("my_callback");
+
+    LOG_INF("channel %d expired", channel_id);
+
 }
 
-#else
-
-void worker_fn(void *p1, void *p2, void *p3)
+static void producer(void *p1, void *p2, void *p3)
 {
-    const char *name = k_thread_name_get(k_current_get());
+    ARG_UNUSED(p1); ARG_UNUSED(p2); ARG_UNUSED(p3);
 
-    for (int i = 0; i < INCREMENTS; i++) {
-        counter++;
+    k_thread_name_set(k_current_get(), "prod");
+
+    for (int i = 0; i < COUNT; i++) {
+        struct sensor_msg msg = {
+            .timestamp_ms = k_uptime_get_32(),
+            .value = 100 + i,
+            .seq = (uint8_t)i,
+        };
+
+        int ret = k_msgq_put(&sensor_queue, &msg, K_MSEC(200));
+        if (ret == 0) {
+            LOG_INF("[PROD] sent seq=%u val=%d q=%u/%d",
+                    msg.seq,
+                    msg.value,
+                    k_msgq_num_used_get(&sensor_queue),
+                    SENSOR_QUEUE_DEPTH);
+        } else {
+            LOG_WRN("[PROD] put failed ret=%d", ret);
+        }
+
+        k_msleep(50);
     }
 
-    LOG_INF("[%s] finished", name);
-    k_sem_give(&done_sem);
+    prod_finished = true;
+    LOG_INF("[PROD] done");
+    k_sem_give(&prod_done);
 }
 
+static void consumer(void *p1, void *p2, void *p3)
+{
+    ARG_UNUSED(p1); ARG_UNUSED(p2); ARG_UNUSED(p3);
+
+    k_thread_name_set(k_current_get(), "cons");
+
+    /* Register a channel per monitored thread */
+    int chan = task_wdt_add(2000,        /* timeout ms */
+                            my_callback, /* called if thread misses feed */
+                            (void *)k_current_get());
+
+    while (true) {
+        struct sensor_msg msg = {0};
+
+        int ret = k_msgq_get(&sensor_queue, &msg, K_MSEC(300));
+        if (ret != 0) {
+            if (prod_finished && k_msgq_num_used_get(&sensor_queue) == 0) {
+                break;
+            }
+
+            LOG_WRN("[CONS] timeout waiting for message");
+            continue;
+        }
+
+        uint32_t latency = k_uptime_get_32() - msg.timestamp_ms;
+
+        LOG_INF("[CONS] got seq=%u val=%d q=%u/%d latency=%ums",
+                msg.seq,
+                msg.value,
+                k_msgq_num_used_get(&sensor_queue),
+                SENSOR_QUEUE_DEPTH,
+                latency);
+
+        task_wdt_feed(chan); /* In the thread: feed regularly */
+
+        k_msleep(5000);
+    }
+
+    LOG_INF("[CONS] done");
+    k_sem_give(&cons_done);
+}
+
+/* ================================================================== */
+/*  Health monitor                                                    */
+/* ================================================================== */
+
+static void health_fn(void *p1, void *p2, void *p3)
+{
+    ARG_UNUSED(p1); ARG_UNUSED(p2); ARG_UNUSED(p3);
+
+    while(1) {
+        k_msleep(120);
+
+        uint32_t used = k_msgq_num_used_get(&sensor_queue);
+
+        if(used * 4 >= SENSOR_QUEUE_DEPTH * 3)
+	    LOG_WRN("[HEALTH] queue occupancy is at least 75%");
+
+        LOG_INF("[HEALTH] sensor_queue=%u/%u",
+            used, SENSOR_QUEUE_DEPTH);
+
+        LOG_DBG("[HEALTH] queue has %u free slots", SENSOR_QUEUE_DEPTH - used);
+
+#if ENABLE_AUDIT_QUEUE
+        LOG_INF("[HEALTH] audit_queue=%u/16", k_msgq_num_used_get(&audit_queue));
 #endif
+    }
+
+    LOG_INF("[HEALTH] done");
+}
 
 
-K_THREAD_DEFINE(worker_a, STACK_SIZE, worker_fn, NULL, NULL, NULL,
-                PRIO, 0, 0);
-K_THREAD_DEFINE(worker_b, STACK_SIZE, worker_fn, NULL, NULL, NULL,
-                PRIO, 0, 0);
+/* ================================================================== */
+/*  Runtime threads                                                   */
+/* ================================================================== */
+
+K_THREAD_STACK_DEFINE(prod_stack, STACK_SIZE);
+K_THREAD_STACK_DEFINE(cons_stack, STACK_SIZE);
+K_THREAD_STACK_DEFINE(health_fn_stack, STACK_SIZE);
+
+static struct k_thread prod_thread;
+static struct k_thread cons_thread;
+static struct k_thread health_thread;
+
+/* ================================================================== */
+/*  Main                                                              */
+/* ================================================================== */
 
 int main(void)
 {
-    k_sem_init(&done_sem, 0, 2);
-    int64_t time = k_uptime_get();
+    LOG_INF("=== L5 Task 1: Message Queue Pipeline ===");
+    LOG_INF("sizeof(sensor_msg)=%u", sizeof(struct sensor_msg));
 
-    LOG_INF("=== L2 Task 1: Mutex Protection ===");
-    LOG_INF("Expected final value: %d", INCREMENTS * 2);
+    LOG_INF("\n--- thread-to-thread pipeline ---");
 
-    /* Wait for both workers to complete */
-    k_sem_take(&done_sem, K_FOREVER);
-    k_sem_take(&done_sem, K_FOREVER);
+    k_msgq_purge(&sensor_queue);
+    prod_finished = false;
 
-    LOG_INF("Actual  final value: %u", counter);
+    task_wdt_init(NULL); /* NULL = software-only; pass hw wdt device for fallback */
 
-    if (counter == INCREMENTS * 2) {
-        LOG_WRN("No race this run");
-    } else {
-        LOG_ERR("Race condition confirmed: lost %d updates",
-                (INCREMENTS * 2) - counter);
-    }
-    LOG_INF("Execution time: %lld ms", k_uptime_delta(&time));
 
-    /*  Unprotected version: counter++ is not an atomic operation.
-	A task may be interrupted after reading counter and before having written back original counter value + 1.
- 	After Interruption, the second thread may access counter.
-	Both threads then write back original counter value + 1, so we are missing one increment.
+    k_thread_create(&health_thread, health_fn_stack,
+                    K_THREAD_STACK_SIZEOF(health_fn_stack), health_fn, 
+                    NULL, NULL, NULL, 5, 0, K_NO_WAIT);
+
+
+    k_thread_create(&prod_thread, prod_stack,
+                    K_THREAD_STACK_SIZEOF(prod_stack), producer, 
+                    NULL, NULL, NULL, 5, 0, K_NO_WAIT);
+
+    /*
+    * Let producer get ahead.
+    * This makes the queue buffer real messages instead of direct handoff.
     */
+    k_msleep(180);
 
-    /*  Protected version:
-        Before reading counter, a task takes the mutex.
-	If the task is interrupted, the other  task blocks attempting to take the mutex.
-	Only after the first task has written back original counter value + 1 and released the mutex,
-	the second task can take the mutex and access counter. Each task increments counter.
-    */
+    k_thread_create(&cons_thread,
+                    cons_stack,
+                    K_THREAD_STACK_SIZEOF(cons_stack), consumer,
+                    NULL, NULL, NULL, 5, 0, K_NO_WAIT);
+
+    k_sem_take(&prod_done, K_FOREVER);
+    k_sem_take(&cons_done, K_FOREVER);
+
+    k_msleep(200);
+
+    LOG_INF("\n=== Demo complete ===");
 
     return 0;
 }
-
