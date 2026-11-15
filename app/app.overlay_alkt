@@ -1,0 +1,10 @@
+/ {
+	chosen {
+		zephyr,tracing-uart = &lpuart1; /* Replace uart1 with an available UART on your board */
+	};
+};
+
+&lpuart1 {
+	status = "okay";
+	current-speed = <115200>;
+};

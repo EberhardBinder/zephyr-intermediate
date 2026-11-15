@@ -1,0 +1,27 @@
+uart:~$ kernel thread list
+Scheduler: 471 since last call
+Threads:
+ 0x200001c8 maintenance
+        options: 0x0, priority: 4 timeout: 0
+        state: pending, entry: 0x8000691
+        stack size 2048, unused 1880, usage 168 / 2048 (8 %)
+
+ 0x20000280 control
+        options: 0x0, priority: 7 timeout: 0
+        state: pending, entry: 0x80006b1
+        stack size 2048, unused 1696, usage 352 / 2048 (17 %)
+
+*0x20000840 shell_uart
+        options: 0x0, priority: 14 timeout: 0
+        state: queued, entry: 0x8003731
+        stack size 2048, unused 1040, usage 1008 / 2048 (49 %)
+
+ 0x20000348 logging
+        options: 0x0, priority: 14 timeout: 0
+        state: pending, entry: 0x80019c5
+        stack size 768, unused 576, usage 192 / 768 (25 %)
+
+ 0x200009c8 idle
+        options: 0x1, priority: 15 timeout: 0
+        state: , entry: 0x800a92f
+        stack size 320, unused 256, usage 64 / 320 (20 %)

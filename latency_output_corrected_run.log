@@ -1,0 +1,407 @@
+uart connected to pseudotty: /dev/pts/5
+*** Booting Zephyr OS build v4.4.0 ***
+[00:00:00.000,000] [0m<inf> homework: === L6 Homework: Runtime Investigation ===[0m
+[00:00:00.000,000] [0m<inf> homework: Control work must start within 10 ms[0m
+[00:00:00.000,000] [0m<inf> homework: Inspect, measure, trace, explain, and correct the delay[0m
+[00:00:00.500,000] [0m<inf> homework: [CONTROL] processed seq=0[0m
+[00:00:00.500,000] [0m<inf> homework: [WORKER] event_done seq=0 latency=0ms[0m
+[00:00:00.750,000] [0m<inf> homework: [CONTROL] processed seq=1[0m
+[00:00:00.750,000] [0m<inf> homework: [WORKER] event_done seq=1 latency=0ms[0m
+[00:00:01.000,000] [0m<inf> homework: [CONTROL] processed seq=2[0m
+[00:00:01.000,000] [0m<inf> homework: [WORKER] event_done seq=2 latency=0ms[0m
+[00:00:01.250,000] [0m<inf> homework: [CONTROL] processed seq=3[0m
+[00:00:01.250,000] [0m<inf> homework: [WORKER] event_done seq=3 latency=0ms[0m
+[00:00:01.500,000] [0m<inf> homework: [CONTROL] processed seq=4[0m
+[00:00:01.500,000] [0m<inf> homework: [WORKER] event_done seq=4 latency=0ms[0m
+[00:00:01.750,000] [0m<inf> homework: [CONTROL] processed seq=5[0m
+[00:00:01.750,000] [0m<inf> homework: [WORKER] event_done seq=5 latency=0ms[0m
+[00:00:02.000,000] [0m<inf> homework: [CONTROL] processed seq=6[0m
+[00:00:02.000,000] [0m<inf> homework: [WORKER] event_done seq=6 latency=0ms[0m
+[00:00:02.250,000] [0m<inf> homework: [CONTROL] processed seq=7[0m
+[00:00:02.250,000] [0m<inf> homework: [WORKER] event_done seq=7 latency=0ms[0m
+[00:00:02.500,000] [0m<inf> homework: [CONTROL] processed seq=8[0m
+[00:00:02.500,000] [0m<inf> homework: [WORKER] event_done seq=8 latency=0ms[0m
+[00:00:02.750,000] [0m<inf> homework: [CONTROL] processed seq=9[0m
+[00:00:02.750,000] [0m<inf> homework: [WORKER] event_done seq=9 latency=0ms[0m
+[00:00:03.000,000] [0m<inf> homework: [CONTROL] processed seq=10[0m
+[00:00:03.000,000] [0m<inf> homework: [WORKER] event_done seq=10 latency=0ms[0m
+[00:00:03.250,000] [0m<inf> homework: [CONTROL] processed seq=11[0m
+[00:00:03.250,000] [0m<inf> homework: [WORKER] event_done seq=11 latency=0ms[0m
+[00:00:03.500,000] [0m<inf> homework: [CONTROL] processed seq=12[0m
+[00:00:03.500,000] [0m<inf> homework: [WORKER] event_done seq=12 latency=0ms[0m
+[00:00:03.750,000] [0m<inf> homework: [CONTROL] processed seq=13[0m
+[00:00:03.750,000] [0m<inf> homework: [WORKER] event_done seq=13 latency=0ms[0m
+[00:00:04.000,000] [0m<inf> homework: [CONTROL] processed seq=14[0m
+[00:00:04.000,000] [0m<inf> homework: [WORKER] event_done seq=14 latency=0ms[0m
+[00:00:04.250,000] [0m<inf> homework: [CONTROL] processed seq=15[0m
+[00:00:04.250,000] [0m<inf> homework: [WORKER] event_done seq=15 latency=0ms[0m
+[00:00:04.500,000] [0m<inf> homework: [CONTROL] processed seq=16[0m
+[00:00:04.500,000] [0m<inf> homework: [WORKER] event_done seq=16 latency=0ms[0m
+[00:00:04.750,000] [0m<inf> homework: [CONTROL] processed seq=17[0m
+[00:00:04.750,000] [0m<inf> homework: [WORKER] event_done seq=17 latency=0ms[0m
+[00:00:05.000,000] [0m<inf> homework: [CONTROL] processed seq=18[0m
+[00:00:05.000,000] [0m<inf> homework: [WORKER] event_done seq=18 latency=0ms[0m
+[00:00:05.250,000] [0m<inf> homework: [CONTROL] processed seq=19[0m
+[00:00:05.250,000] [0m<inf> homework: [WORKER] event_done seq=19 latency=0ms[0m
+[00:00:05.500,000] [0m<inf> homework: [CONTROL] processed seq=20[0m
+[00:00:05.500,000] [0m<inf> homework: [WORKER] event_done seq=20 latency=0ms[0m
+[00:00:05.750,000] [0m<inf> homework: [CONTROL] processed seq=21[0m
+[00:00:05.750,000] [0m<inf> homework: [WORKER] event_done seq=21 latency=0ms[0m
+[00:00:06.000,000] [0m<inf> homework: [CONTROL] processed seq=22[0m
+[00:00:06.000,000] [0m<inf> homework: [WORKER] event_done seq=22 latency=0ms[0m
+[00:00:06.250,000] [0m<inf> homework: [CONTROL] processed seq=23[0m
+[00:00:06.250,000] [0m<inf> homework: [WORKER] event_done seq=23 latency=0ms[0m
+[00:00:06.500,000] [0m<inf> homework: [CONTROL] processed seq=24[0m
+[00:00:06.500,000] [0m<inf> homework: [WORKER] event_done seq=24 latency=0ms[0m
+[00:00:06.750,000] [0m<inf> homework: [CONTROL] processed seq=25[0m
+[00:00:06.750,000] [0m<inf> homework: [WORKER] event_done seq=25 latency=0ms[0m
+[00:00:07.000,000] [0m<inf> homework: [CONTROL] processed seq=26[0m
+[00:00:07.000,000] [0m<inf> homework: [WORKER] event_done seq=26 latency=0ms[0m
+[00:00:07.250,000] [0m<inf> homework: [CONTROL] processed seq=27[0m
+[00:00:07.250,000] [0m<inf> homework: [WORKER] event_done seq=27 latency=0ms[0m
+[00:00:07.500,000] [0m<inf> homework: [CONTROL] processed seq=28[0m
+[00:00:07.500,000] [0m<inf> homework: [WORKER] event_done seq=28 latency=0ms[0m
+[00:00:07.750,000] [0m<inf> homework: [CONTROL] processed seq=29[0m
+[00:00:07.750,000] [0m<inf> homework: [WORKER] event_done seq=29 latency=0ms[0m
+[00:00:08.000,000] [0m<inf> homework: [CONTROL] processed seq=30[0m
+[00:00:08.000,000] [0m<inf> homework: [WORKER] event_done seq=30 latency=0ms[0m
+[00:00:08.250,000] [0m<inf> homework: [CONTROL] processed seq=31[0m
+[00:00:08.250,000] [0m<inf> homework: [WORKER] event_done seq=31 latency=0ms[0m
+[00:00:08.500,000] [0m<inf> homework: [CONTROL] processed seq=32[0m
+[00:00:08.500,000] [0m<inf> homework: [WORKER] event_done seq=32 latency=0ms[0m
+[00:00:08.750,000] [0m<inf> homework: [CONTROL] processed seq=33[0m
+[00:00:08.750,000] [0m<inf> homework: [WORKER] event_done seq=33 latency=0ms[0m
+[00:00:09.000,000] [0m<inf> homework: [CONTROL] processed seq=34[0m
+[00:00:09.000,000] [0m<inf> homework: [WORKER] event_done seq=34 latency=0ms[0m
+[00:00:09.250,000] [0m<inf> homework: [CONTROL] processed seq=35[0m
+[00:00:09.250,000] [0m<inf> homework: [WORKER] event_done seq=35 latency=0ms[0m
+[00:00:09.500,000] [0m<inf> homework: [CONTROL] processed seq=36[0m
+[00:00:09.500,000] [0m<inf> homework: [WORKER] event_done seq=36 latency=0ms[0m
+[00:00:09.750,000] [0m<inf> homework: [CONTROL] processed seq=37[0m
+[00:00:09.750,000] [0m<inf> homework: [WORKER] event_done seq=37 latency=0ms[0m
+[00:00:10.000,000] [0m<inf> homework: [CONTROL] processed seq=38[0m
+[00:00:10.000,000] [0m<inf> homework: [WORKER] event_done seq=38 latency=0ms[0m
+[00:00:10.250,000] [0m<inf> homework: [CONTROL] processed seq=39[0m
+[00:00:10.250,000] [0m<inf> homework: [WORKER] event_done seq=39 latency=0ms[0m
+[00:00:10.500,000] [0m<inf> homework: [CONTROL] processed seq=40[0m
+[00:00:10.500,000] [0m<inf> homework: [WORKER] event_done seq=40 latency=0ms[0m
+[00:00:10.750,000] [0m<inf> homework: [CONTROL] processed seq=41[0m
+[00:00:10.750,000] [0m<inf> homework: [WORKER] event_done seq=41 latency=0ms[0m
+[00:00:11.000,000] [0m<inf> homework: [CONTROL] processed seq=42[0m
+[00:00:11.000,000] [0m<inf> homework: [WORKER] event_done seq=42 latency=0ms[0m
+[00:00:11.250,000] [0m<inf> homework: [CONTROL] processed seq=43[0m
+[00:00:11.250,000] [0m<inf> homework: [WORKER] event_done seq=43 latency=0ms[0m
+[00:00:11.500,000] [0m<inf> homework: [CONTROL] processed seq=44[0m
+[00:00:11.500,000] [0m<inf> homework: [WORKER] event_done seq=44 latency=0ms[0m
+[00:00:11.750,000] [0m<inf> homework: [CONTROL] processed seq=45[0m
+[00:00:11.750,000] [0m<inf> homework: [WORKER] event_done seq=45 latency=0ms[0m
+[00:00:12.000,000] [0m<inf> homework: [CONTROL] processed seq=46[0m
+[00:00:12.000,000] [0m<inf> homework: [WORKER] event_done seq=46 latency=0ms[0m
+[00:00:12.250,000] [0m<inf> homework: [CONTROL] processed seq=47[0m
+[00:00:12.250,000] [0m<inf> homework: [WORKER] event_done seq=47 latency=0ms[0m
+[00:00:12.500,000] [0m<inf> homework: [CONTROL] processed seq=48[0m
+[00:00:12.500,000] [0m<inf> homework: [WORKER] event_done seq=48 latency=0ms[0m
+[00:00:12.750,000] [0m<inf> homework: [CONTROL] processed seq=49[0m
+[00:00:12.750,000] [0m<inf> homework: [WORKER] event_done seq=49 latency=0ms[0m
+[00:00:13.000,000] [0m<inf> homework: [CONTROL] processed seq=50[0m
+[00:00:13.000,000] [0m<inf> homework: [WORKER] event_done seq=50 latency=0ms[0m
+[00:00:13.250,000] [0m<inf> homework: [CONTROL] processed seq=51[0m
+[00:00:13.250,000] [0m<inf> homework: [WORKER] event_done seq=51 latency=0ms[0m
+[00:00:13.500,000] [0m<inf> homework: [CONTROL] processed seq=52[0m
+[00:00:13.500,000] [0m<inf> homework: [WORKER] event_done seq=52 latency=0ms[0m
+[00:00:13.750,000] [0m<inf> homework: [CONTROL] processed seq=53[0m
+[00:00:13.750,000] [0m<inf> homework: [WORKER] event_done seq=53 latency=0ms[0m
+[00:00:14.000,000] [0m<inf> homework: [CONTROL] processed seq=54[0m
+[00:00:14.000,000] [0m<inf> homework: [WORKER] event_done seq=54 latency=0ms[0m
+[00:00:14.250,000] [0m<inf> homework: [CONTROL] processed seq=55[0m
+[00:00:14.250,000] [0m<inf> homework: [WORKER] event_done seq=55 latency=0ms[0m
+[00:00:14.500,000] [0m<inf> homework: [CONTROL] processed seq=56[0m
+[00:00:14.500,000] [0m<inf> homework: [WORKER] event_done seq=56 latency=0ms[0m
+[00:00:14.750,000] [0m<inf> homework: [CONTROL] processed seq=57[0m
+[00:00:14.750,000] [0m<inf> homework: [WORKER] event_done seq=57 latency=0ms[0m
+[00:00:15.000,000] [0m<inf> homework: [CONTROL] processed seq=58[0m
+[00:00:15.000,000] [0m<inf> homework: [WORKER] event_done seq=58 latency=0ms[0m
+[00:00:15.250,000] [0m<inf> homework: [CONTROL] processed seq=59[0m
+[00:00:15.250,000] [0m<inf> homework: [WORKER] event_done seq=59 latency=0ms[0m
+[00:00:15.500,000] [0m<inf> homework: [CONTROL] processed seq=60[0m
+[00:00:15.500,000] [0m<inf> homework: [WORKER] event_done seq=60 latency=0ms[0m
+[00:00:15.750,000] [0m<inf> homework: [CONTROL] processed seq=61[0m
+[00:00:15.750,000] [0m<inf> homework: [WORKER] event_done seq=61 latency=0ms[0m
+[00:00:16.000,000] [0m<inf> homework: [CONTROL] processed seq=62[0m
+[00:00:16.000,000] [0m<inf> homework: [WORKER] event_done seq=62 latency=0ms[0m
+[00:00:16.250,000] [0m<inf> homework: [CONTROL] processed seq=63[0m
+[00:00:16.250,000] [0m<inf> homework: [WORKER] event_done seq=63 latency=0ms[0m
+[00:00:16.500,000] [0m<inf> homework: [CONTROL] processed seq=64[0m
+[00:00:16.500,000] [0m<inf> homework: [WORKER] event_done seq=64 latency=0ms[0m
+[00:00:16.750,000] [0m<inf> homework: [CONTROL] processed seq=65[0m
+[00:00:16.750,000] [0m<inf> homework: [WORKER] event_done seq=65 latency=0ms[0m
+[00:00:17.000,000] [0m<inf> homework: [CONTROL] processed seq=66[0m
+[00:00:17.000,000] [0m<inf> homework: [WORKER] event_done seq=66 latency=0ms[0m
+[00:00:17.250,000] [0m<inf> homework: [CONTROL] processed seq=67[0m
+[00:00:17.250,000] [0m<inf> homework: [WORKER] event_done seq=67 latency=0ms[0m
+[00:00:17.500,000] [0m<inf> homework: [CONTROL] processed seq=68[0m
+[00:00:17.500,000] [0m<inf> homework: [WORKER] event_done seq=68 latency=0ms[0m
+[00:00:17.750,000] [0m<inf> homework: [CONTROL] processed seq=69[0m
+[00:00:17.750,000] [0m<inf> homework: [WORKER] event_done seq=69 latency=0ms[0m
+[00:00:18.000,000] [0m<inf> homework: [CONTROL] processed seq=70[0m
+[00:00:18.000,000] [0m<inf> homework: [WORKER] event_done seq=70 latency=0ms[0m
+[00:00:18.250,000] [0m<inf> homework: [CONTROL] processed seq=71[0m
+[00:00:18.250,000] [0m<inf> homework: [WORKER] event_done seq=71 latency=0ms[0m
+[00:00:18.500,000] [0m<inf> homework: [CONTROL] processed seq=72[0m
+[00:00:18.500,000] [0m<inf> homework: [WORKER] event_done seq=72 latency=0ms[0m
+[00:00:18.750,000] [0m<inf> homework: [CONTROL] processed seq=73[0m
+[00:00:18.750,000] [0m<inf> homework: [WORKER] event_done seq=73 latency=0ms[0m
+[00:00:19.000,000] [0m<inf> homework: [CONTROL] processed seq=74[0m
+[00:00:19.000,000] [0m<inf> homework: [WORKER] event_done seq=74 latency=0ms[0m
+[00:00:19.250,000] [0m<inf> homework: [CONTROL] processed seq=75[0m
+[00:00:19.250,000] [0m<inf> homework: [WORKER] event_done seq=75 latency=0ms[0m
+[00:00:19.500,000] [0m<inf> homework: [CONTROL] processed seq=76[0m
+[00:00:19.500,000] [0m<inf> homework: [WORKER] event_done seq=76 latency=0ms[0m
+[00:00:19.750,000] [0m<inf> homework: [CONTROL] processed seq=77[0m
+[00:00:19.750,000] [0m<inf> homework: [WORKER] event_done seq=77 latency=0ms[0m
+[00:00:20.000,000] [0m<inf> homework: [CONTROL] processed seq=78[0m
+[00:00:20.000,000] [0m<inf> homework: [WORKER] event_done seq=78 latency=0ms[0m
+[00:00:20.250,000] [0m<inf> homework: [CONTROL] processed seq=79[0m
+[00:00:20.250,000] [0m<inf> homework: [WORKER] event_done seq=79 latency=0ms[0m
+[00:00:20.500,000] [0m<inf> homework: [CONTROL] processed seq=80[0m
+[00:00:20.500,000] [0m<inf> homework: [WORKER] event_done seq=80 latency=0ms[0m
+[00:00:20.750,000] [0m<inf> homework: [CONTROL] processed seq=81[0m
+[00:00:20.750,000] [0m<inf> homework: [WORKER] event_done seq=81 latency=0ms[0m
+[00:00:21.000,000] [0m<inf> homework: [CONTROL] processed seq=82[0m
+[00:00:21.000,000] [0m<inf> homework: [WORKER] event_done seq=82 latency=0ms[0m
+[00:00:21.250,000] [0m<inf> homework: [CONTROL] processed seq=83[0m
+[00:00:21.250,000] [0m<inf> homework: [WORKER] event_done seq=83 latency=0ms[0m
+[00:00:21.500,000] [0m<inf> homework: [CONTROL] processed seq=84[0m
+[00:00:21.500,000] [0m<inf> homework: [WORKER] event_done seq=84 latency=0ms[0m
+[00:00:21.750,000] [0m<inf> homework: [CONTROL] processed seq=85[0m
+[00:00:21.750,000] [0m<inf> homework: [WORKER] event_done seq=85 latency=0ms[0m
+[00:00:22.000,000] [0m<inf> homework: [CONTROL] processed seq=86[0m
+[00:00:22.000,000] [0m<inf> homework: [WORKER] event_done seq=86 latency=0ms[0m
+[00:00:22.250,000] [0m<inf> homework: [CONTROL] processed seq=87[0m
+[00:00:22.250,000] [0m<inf> homework: [WORKER] event_done seq=87 latency=0ms[0m
+[00:00:22.500,000] [0m<inf> homework: [CONTROL] processed seq=88[0m
+[00:00:22.500,000] [0m<inf> homework: [WORKER] event_done seq=88 latency=0ms[0m
+[00:00:22.750,000] [0m<inf> homework: [CONTROL] processed seq=89[0m
+[00:00:22.750,000] [0m<inf> homework: [WORKER] event_done seq=89 latency=0ms[0m
+[00:00:23.000,000] [0m<inf> homework: [CONTROL] processed seq=90[0m
+[00:00:23.000,000] [0m<inf> homework: [WORKER] event_done seq=90 latency=0ms[0m
+[00:00:23.250,000] [0m<inf> homework: [CONTROL] processed seq=91[0m
+[00:00:23.250,000] [0m<inf> homework: [WORKER] event_done seq=91 latency=0ms[0m
+[00:00:23.500,000] [0m<inf> homework: [CONTROL] processed seq=92[0m
+[00:00:23.500,000] [0m<inf> homework: [WORKER] event_done seq=92 latency=0ms[0m
+[00:00:23.750,000] [0m<inf> homework: [CONTROL] processed seq=93[0m
+[00:00:23.750,000] [0m<inf> homework: [WORKER] event_done seq=93 latency=0ms[0m
+[00:00:24.000,000] [0m<inf> homework: [CONTROL] processed seq=94[0m
+[00:00:24.000,000] [0m<inf> homework: [WORKER] event_done seq=94 latency=0ms[0m
+[00:00:24.250,000] [0m<inf> homework: [CONTROL] processed seq=95[0m
+[00:00:24.250,000] [0m<inf> homework: [WORKER] event_done seq=95 latency=0ms[0m
+[00:00:24.500,000] [0m<inf> homework: [CONTROL] processed seq=96[0m
+[00:00:24.500,000] [0m<inf> homework: [WORKER] event_done seq=96 latency=0ms[0m
+[00:00:24.750,000] [0m<inf> homework: [CONTROL] processed seq=97[0m
+[00:00:24.750,000] [0m<inf> homework: [WORKER] event_done seq=97 latency=0ms[0m
+[00:00:25.000,000] [0m<inf> homework: [CONTROL] processed seq=98[0m
+[00:00:25.000,000] [0m<inf> homework: [WORKER] event_done seq=98 latency=0ms[0m
+[00:00:25.250,000] [0m<inf> homework: [CONTROL] processed seq=99[0m
+[00:00:25.250,000] [0m<inf> homework: [WORKER] event_done seq=99 latency=0ms[0m
+[00:00:25.500,000] [0m<inf> homework: [CONTROL] processed seq=100[0m
+[00:00:25.500,000] [0m<inf> homework: [WORKER] event_done seq=100 latency=0ms[0m
+[00:00:25.750,000] [0m<inf> homework: [CONTROL] processed seq=101[0m
+[00:00:25.750,000] [0m<inf> homework: [WORKER] event_done seq=101 latency=0ms[0m
+[00:00:26.000,000] [0m<inf> homework: [CONTROL] processed seq=102[0m
+[00:00:26.000,000] [0m<inf> homework: [WORKER] event_done seq=102 latency=0ms[0m
+[00:00:26.250,000] [0m<inf> homework: [CONTROL] processed seq=103[0m
+[00:00:26.250,000] [0m<inf> homework: [WORKER] event_done seq=103 latency=0ms[0m
+[00:00:26.500,000] [0m<inf> homework: [CONTROL] processed seq=104[0m
+[00:00:26.500,000] [0m<inf> homework: [WORKER] event_done seq=104 latency=0ms[0m
+[00:00:26.750,000] [0m<inf> homework: [CONTROL] processed seq=105[0m
+[00:00:26.750,000] [0m<inf> homework: [WORKER] event_done seq=105 latency=0ms[0m
+[00:00:27.000,000] [0m<inf> homework: [CONTROL] processed seq=106[0m
+[00:00:27.000,000] [0m<inf> homework: [WORKER] event_done seq=106 latency=0ms[0m
+[00:00:27.250,000] [0m<inf> homework: [CONTROL] processed seq=107[0m
+[00:00:27.250,000] [0m<inf> homework: [WORKER] event_done seq=107 latency=0ms[0m
+[00:00:27.500,000] [0m<inf> homework: [CONTROL] processed seq=108[0m
+[00:00:27.500,000] [0m<inf> homework: [WORKER] event_done seq=108 latency=0ms[0m
+[00:00:27.750,000] [0m<inf> homework: [CONTROL] processed seq=109[0m
+[00:00:27.750,000] [0m<inf> homework: [WORKER] event_done seq=109 latency=0ms[0m
+[00:00:28.000,000] [0m<inf> homework: [CONTROL] processed seq=110[0m
+[00:00:28.000,000] [0m<inf> homework: [WORKER] event_done seq=110 latency=0ms[0m
+[00:00:28.250,000] [0m<inf> homework: [CONTROL] processed seq=111[0m
+[00:00:28.250,000] [0m<inf> homework: [WORKER] event_done seq=111 latency=0ms[0m
+[00:00:28.500,000] [0m<inf> homework: [CONTROL] processed seq=112[0m
+[00:00:28.500,000] [0m<inf> homework: [WORKER] event_done seq=112 latency=0ms[0m
+[00:00:28.750,000] [0m<inf> homework: [CONTROL] processed seq=113[0m
+[00:00:28.750,000] [0m<inf> homework: [WORKER] event_done seq=113 latency=0ms[0m
+[00:00:29.000,000] [0m<inf> homework: [CONTROL] processed seq=114[0m
+[00:00:29.000,000] [0m<inf> homework: [WORKER] event_done seq=114 latency=0ms[0m
+[00:00:29.250,000] [0m<inf> homework: [CONTROL] processed seq=115[0m
+[00:00:29.250,000] [0m<inf> homework: [WORKER] event_done seq=115 latency=0ms[0m
+[00:00:29.500,000] [0m<inf> homework: [CONTROL] processed seq=116[0m
+[00:00:29.500,000] [0m<inf> homework: [WORKER] event_done seq=116 latency=0ms[0m
+[00:00:29.750,000] [0m<inf> homework: [CONTROL] processed seq=117[0m
+[00:00:29.750,000] [0m<inf> homework: [WORKER] event_done seq=117 latency=0ms[0m
+[00:00:30.000,000] [0m<inf> homework: [CONTROL] processed seq=118[0m
+[00:00:30.000,000] [0m<inf> homework: [WORKER] event_done seq=118 latency=0ms[0m
+[00:00:30.250,000] [0m<inf> homework: [CONTROL] processed seq=119[0m
+[00:00:30.250,000] [0m<inf> homework: [WORKER] event_done seq=119 latency=0ms[0m
+[00:00:30.500,000] [0m<inf> homework: [CONTROL] processed seq=120[0m
+[00:00:30.500,000] [0m<inf> homework: [WORKER] event_done seq=120 latency=0ms[0m
+[00:00:30.750,000] [0m<inf> homework: [CONTROL] processed seq=121[0m
+[00:00:30.750,000] [0m<inf> homework: [WORKER] event_done seq=121 latency=0ms[0m
+[00:00:31.000,000] [0m<inf> homework: [CONTROL] processed seq=122[0m
+[00:00:31.000,000] [0m<inf> homework: [WORKER] event_done seq=122 latency=0ms[0m
+[00:00:31.250,000] [0m<inf> homework: [CONTROL] processed seq=123[0m
+[00:00:31.250,000] [0m<inf> homework: [WORKER] event_done seq=123 latency=0ms[0m
+[00:00:31.500,000] [0m<inf> homework: [CONTROL] processed seq=124[0m
+[00:00:31.500,000] [0m<inf> homework: [WORKER] event_done seq=124 latency=0ms[0m
+[00:00:31.750,000] [0m<inf> homework: [CONTROL] processed seq=125[0m
+[00:00:31.750,000] [0m<inf> homework: [WORKER] event_done seq=125 latency=0ms[0m
+[00:00:32.000,000] [0m<inf> homework: [CONTROL] processed seq=126[0m
+[00:00:32.000,000] [0m<inf> homework: [WORKER] event_done seq=126 latency=0ms[0m
+[00:00:32.250,000] [0m<inf> homework: [CONTROL] processed seq=127[0m
+[00:00:32.250,000] [0m<inf> homework: [WORKER] event_done seq=127 latency=0ms[0m
+[00:00:32.500,000] [0m<inf> homework: [CONTROL] processed seq=128[0m
+[00:00:32.500,000] [0m<inf> homework: [WORKER] event_done seq=128 latency=0ms[0m
+[00:00:32.750,000] [0m<inf> homework: [CONTROL] processed seq=129[0m
+[00:00:32.750,000] [0m<inf> homework: [WORKER] event_done seq=129 latency=0ms[0m
+[00:00:33.000,000] [0m<inf> homework: [CONTROL] processed seq=130[0m
+[00:00:33.000,000] [0m<inf> homework: [WORKER] event_done seq=130 latency=0ms[0m
+[00:00:33.250,000] [0m<inf> homework: [CONTROL] processed seq=131[0m
+[00:00:33.250,000] [0m<inf> homework: [WORKER] event_done seq=131 latency=0ms[0m
+[00:00:33.500,000] [0m<inf> homework: [CONTROL] processed seq=132[0m
+[00:00:33.500,000] [0m<inf> homework: [WORKER] event_done seq=132 latency=0ms[0m
+[00:00:33.750,000] [0m<inf> homework: [CONTROL] processed seq=133[0m
+[00:00:33.750,000] [0m<inf> homework: [WORKER] event_done seq=133 latency=0ms[0m
+[00:00:34.000,000] [0m<inf> homework: [CONTROL] processed seq=134[0m
+[00:00:34.000,000] [0m<inf> homework: [WORKER] event_done seq=134 latency=0ms[0m
+[00:00:34.250,000] [0m<inf> homework: [CONTROL] processed seq=135[0m
+[00:00:34.250,000] [0m<inf> homework: [WORKER] event_done seq=135 latency=0ms[0m
+[00:00:34.500,000] [0m<inf> homework: [CONTROL] processed seq=136[0m
+[00:00:34.500,000] [0m<inf> homework: [WORKER] event_done seq=136 latency=0ms[0m
+[00:00:34.750,000] [0m<inf> homework: [CONTROL] processed seq=137[0m
+[00:00:34.750,000] [0m<inf> homework: [WORKER] event_done seq=137 latency=0ms[0m
+[00:00:35.000,000] [0m<inf> homework: [CONTROL] processed seq=138[0m
+[00:00:35.000,000] [0m<inf> homework: [WORKER] event_done seq=138 latency=0ms[0m
+[00:00:35.250,000] [0m<inf> homework: [CONTROL] processed seq=139[0m
+[00:00:35.250,000] [0m<inf> homework: [WORKER] event_done seq=139 latency=0ms[0m
+[00:00:35.500,000] [0m<inf> homework: [CONTROL] processed seq=140[0m
+[00:00:35.500,000] [0m<inf> homework: [WORKER] event_done seq=140 latency=0ms[0m
+[00:00:35.750,000] [0m<inf> homework: [CONTROL] processed seq=141[0m
+[00:00:35.750,000] [0m<inf> homework: [WORKER] event_done seq=141 latency=0ms[0m
+[00:00:36.000,000] [0m<inf> homework: [CONTROL] processed seq=142[0m
+[00:00:36.000,000] [0m<inf> homework: [WORKER] event_done seq=142 latency=0ms[0m
+[00:00:36.250,000] [0m<inf> homework: [CONTROL] processed seq=143[0m
+[00:00:36.250,000] [0m<inf> homework: [WORKER] event_done seq=143 latency=0ms[0m
+[00:00:36.500,000] [0m<inf> homework: [CONTROL] processed seq=144[0m
+[00:00:36.500,000] [0m<inf> homework: [WORKER] event_done seq=144 latency=0ms[0m
+[00:00:36.750,000] [0m<inf> homework: [CONTROL] processed seq=145[0m
+[00:00:36.750,000] [0m<inf> homework: [WORKER] event_done seq=145 latency=0ms[0m
+[00:00:37.000,000] [0m<inf> homework: [CONTROL] processed seq=146[0m
+[00:00:37.000,000] [0m<inf> homework: [WORKER] event_done seq=146 latency=0ms[0m
+[00:00:37.250,000] [0m<inf> homework: [CONTROL] processed seq=147[0m
+[00:00:37.250,000] [0m<inf> homework: [WORKER] event_done seq=147 latency=0ms[0m
+[00:00:37.500,000] [0m<inf> homework: [CONTROL] processed seq=148[0m
+[00:00:37.500,000] [0m<inf> homework: [WORKER] event_done seq=148 latency=0ms[0m
+[00:00:37.750,000] [0m<inf> homework: [CONTROL] processed seq=149[0m
+[00:00:37.750,000] [0m<inf> homework: [WORKER] event_done seq=149 latency=0ms[0m
+[00:00:38.000,000] [0m<inf> homework: [CONTROL] processed seq=150[0m
+[00:00:38.000,000] [0m<inf> homework: [WORKER] event_done seq=150 latency=0ms[0m
+[00:00:38.250,000] [0m<inf> homework: [CONTROL] processed seq=151[0m
+[00:00:38.250,000] [0m<inf> homework: [WORKER] event_done seq=151 latency=0ms[0m
+[00:00:38.500,000] [0m<inf> homework: [CONTROL] processed seq=152[0m
+[00:00:38.500,000] [0m<inf> homework: [WORKER] event_done seq=152 latency=0ms[0m
+[00:00:38.750,000] [0m<inf> homework: [CONTROL] processed seq=153[0m
+[00:00:38.750,000] [0m<inf> homework: [WORKER] event_done seq=153 latency=0ms[0m
+[00:00:39.000,000] [0m<inf> homework: [CONTROL] processed seq=154[0m
+[00:00:39.000,000] [0m<inf> homework: [WORKER] event_done seq=154 latency=0ms[0m
+[00:00:39.250,000] [0m<inf> homework: [CONTROL] processed seq=155[0m
+[00:00:39.250,000] [0m<inf> homework: [WORKER] event_done seq=155 latency=0ms[0m
+[00:00:39.500,000] [0m<inf> homework: [CONTROL] processed seq=156[0m
+[00:00:39.500,000] [0m<inf> homework: [WORKER] event_done seq=156 latency=0ms[0m
+[00:00:39.750,000] [0m<inf> homework: [CONTROL] processed seq=157[0m
+[00:00:39.750,000] [0m<inf> homework: [WORKER] event_done seq=157 latency=0ms[0m
+[00:00:40.000,000] [0m<inf> homework: [CONTROL] processed seq=158[0m
+[00:00:40.000,000] [0m<inf> homework: [WORKER] event_done seq=158 latency=0ms[0m
+[00:00:40.250,000] [0m<inf> homework: [CONTROL] processed seq=159[0m
+[00:00:40.250,000] [0m<inf> homework: [WORKER] event_done seq=159 latency=0ms[0m
+[00:00:40.500,000] [0m<inf> homework: [CONTROL] processed seq=160[0m
+[00:00:40.500,000] [0m<inf> homework: [WORKER] event_done seq=160 latency=0ms[0m
+[00:00:40.750,000] [0m<inf> homework: [CONTROL] processed seq=161[0m
+[00:00:40.750,000] [0m<inf> homework: [WORKER] event_done seq=161 latency=0ms[0m
+[00:00:41.000,000] [0m<inf> homework: [CONTROL] processed seq=162[0m
+[00:00:41.000,000] [0m<inf> homework: [WORKER] event_done seq=162 latency=0ms[0m
+[00:00:41.250,000] [0m<inf> homework: [CONTROL] processed seq=163[0m
+[00:00:41.250,000] [0m<inf> homework: [WORKER] event_done seq=163 latency=0ms[0m
+[00:00:41.500,000] [0m<inf> homework: [CONTROL] processed seq=164[0m
+[00:00:41.500,000] [0m<inf> homework: [WORKER] event_done seq=164 latency=0ms[0m
+[00:00:41.750,000] [0m<inf> homework: [CONTROL] processed seq=165[0m
+[00:00:41.750,000] [0m<inf> homework: [WORKER] event_done seq=165 latency=0ms[0m
+[00:00:42.000,000] [0m<inf> homework: [CONTROL] processed seq=166[0m
+[00:00:42.000,000] [0m<inf> homework: [WORKER] event_done seq=166 latency=0ms[0m
+[00:00:42.250,000] [0m<inf> homework: [CONTROL] processed seq=167[0m
+[00:00:42.250,000] [0m<inf> homework: [WORKER] event_done seq=167 latency=0ms[0m
+[00:00:42.500,000] [0m<inf> homework: [CONTROL] processed seq=168[0m
+[00:00:42.500,000] [0m<inf> homework: [WORKER] event_done seq=168 latency=0ms[0m
+[00:00:42.750,000] [0m<inf> homework: [CONTROL] processed seq=169[0m
+[00:00:42.750,000] [0m<inf> homework: [WORKER] event_done seq=169 latency=0ms[0m
+[00:00:43.000,000] [0m<inf> homework: [CONTROL] processed seq=170[0m
+[00:00:43.000,000] [0m<inf> homework: [WORKER] event_done seq=170 latency=0ms[0m
+[00:00:43.250,000] [0m<inf> homework: [CONTROL] processed seq=171[0m
+[00:00:43.250,000] [0m<inf> homework: [WORKER] event_done seq=171 latency=0ms[0m
+[00:00:43.500,000] [0m<inf> homework: [CONTROL] processed seq=172[0m
+[00:00:43.500,000] [0m<inf> homework: [WORKER] event_done seq=172 latency=0ms[0m
+[00:00:43.750,000] [0m<inf> homework: [CONTROL] processed seq=173[0m
+[00:00:43.750,000] [0m<inf> homework: [WORKER] event_done seq=173 latency=0ms[0m
+[00:00:44.000,000] [0m<inf> homework: [CONTROL] processed seq=174[0m
+[00:00:44.000,000] [0m<inf> homework: [WORKER] event_done seq=174 latency=0ms[0m
+[00:00:44.250,000] [0m<inf> homework: [CONTROL] processed seq=175[0m
+[00:00:44.250,000] [0m<inf> homework: [WORKER] event_done seq=175 latency=0ms[0m
+[00:00:44.500,000] [0m<inf> homework: [CONTROL] processed seq=176[0m
+[00:00:44.500,000] [0m<inf> homework: [WORKER] event_done seq=176 latency=0ms[0m
+[00:00:44.750,000] [0m<inf> homework: [CONTROL] processed seq=177[0m
+[00:00:44.750,000] [0m<inf> homework: [WORKER] event_done seq=177 latency=0ms[0m
+[00:00:45.000,000] [0m<inf> homework: [CONTROL] processed seq=178[0m
+[00:00:45.000,000] [0m<inf> homework: [WORKER] event_done seq=178 latency=0ms[0m
+[00:00:45.250,000] [0m<inf> homework: [CONTROL] processed seq=179[0m
+[00:00:45.250,000] [0m<inf> homework: [WORKER] event_done seq=179 latency=0ms[0m
+[00:00:45.500,000] [0m<inf> homework: [CONTROL] processed seq=180[0m
+[00:00:45.500,000] [0m<inf> homework: [WORKER] event_done seq=180 latency=0ms[0m
+[00:00:45.750,000] [0m<inf> homework: [CONTROL] processed seq=181[0m
+[00:00:45.750,000] [0m<inf> homework: [WORKER] event_done seq=181 latency=0ms[0m
+[00:00:46.000,000] [0m<inf> homework: [CONTROL] processed seq=182[0m
+[00:00:46.000,000] [0m<inf> homework: [WORKER] event_done seq=182 latency=0ms[0m
+[00:00:46.250,000] [0m<inf> homework: [CONTROL] processed seq=183[0m
+[00:00:46.250,000] [0m<inf> homework: [WORKER] event_done seq=183 latency=0ms[0m
+[00:00:46.500,000] [0m<inf> homework: [CONTROL] processed seq=184[0m
+[00:00:46.500,000] [0m<inf> homework: [WORKER] event_done seq=184 latency=0ms[0m
+[00:00:46.750,000] [0m<inf> homework: [CONTROL] processed seq=185[0m
+[00:00:46.750,000] [0m<inf> homework: [WORKER] event_done seq=185 latency=0ms[0m
+[00:00:47.000,000] [0m<inf> homework: [CONTROL] processed seq=186[0m
+[00:00:47.000,000] [0m<inf> homework: [WORKER] event_done seq=186 latency=0ms[0m
+[00:00:47.250,000] [0m<inf> homework: [CONTROL] processed seq=187[0m
+[00:00:47.250,000] [0m<inf> homework: [WORKER] event_done seq=187 latency=0ms[0m
+[00:00:47.500,000] [0m<inf> homework: [CONTROL] processed seq=188[0m
+[00:00:47.500,000] [0m<inf> homework: [WORKER] event_done seq=188 latency=0ms[0m
+[00:00:47.750,000] [0m<inf> homework: [CONTROL] processed seq=189[0m
+[00:00:47.750,000] [0m<inf> homework: [WORKER] event_done seq=189 latency=0ms[0m
+[00:00:48.000,000] [0m<inf> homework: [CONTROL] processed seq=190[0m
+[00:00:48.000,000] [0m<inf> homework: [WORKER] event_done seq=190 latency=0ms[0m
+[00:00:48.250,000] [0m<inf> homework: [CONTROL] processed seq=191[0m
+[00:00:48.250,000] [0m<inf> homework: [WORKER] event_done seq=191 latency=0ms[0m
+[00:00:48.500,000] [0m<inf> homework: [CONTROL] processed seq=192[0m
+[00:00:48.500,000] [0m<inf> homework: [WORKER] event_done seq=192 latency=0ms[0m
+[00:00:48.750,000] [0m<inf> homework: [CONTROL] processed seq=193[0m
+[00:00:48.750,000] [0m<inf> homework: [WORKER] event_done seq=193 latency=0ms[0m
+[00:00:49.000,000] [0m<inf> homework: [CONTROL] processed seq=194[0m
+[00:00:49.000,000] [0m<inf> homework: [WORKER] event_done seq=194 latency=0ms[0m
+[00:00:49.250,000] [0m<inf> homework: [CONTROL] processed seq=195[0m
+[00:00:49.250,000] [0m<inf> homework: [WORKER] event_done seq=195 latency=0ms[0m
+[00:00:49.500,000] [0m<inf> homework: [CONTROL] processed seq=196[0m
+[00:00:49.500,000] [0m<inf> homework: [WORKER] event_done seq=196 latency=0ms[0m
+[00:00:49.750,000] [0m<inf> homework: [CONTROL] processed seq=197[0m
+[00:00:49.750,000] [0m<inf> homework: [WORKER] event_done seq=197 latency=0ms[0m
+[00:00:50.000,000] [0m<inf> homework: [CONTROL] processed seq=198[0m
+[00:00:50.000,000] [0m<inf> homework: [WORKER] event_done seq=198 latency=0ms[0m
+[00:00:50.250,000] [0m<inf> homework: [CONTROL] processed seq=199[0m
+[00:00:50.250,000] [0m<inf> homework: [WORKER] event_done seq=199 latency=0ms[0m
+[00:00:50.500,000] [0m<inf> homework: [CONTROL] processed seq=200[0m
+[00:00:50.500,000] [0m<inf> homework: [WORKER] event_done seq=200 latency=0ms[0m

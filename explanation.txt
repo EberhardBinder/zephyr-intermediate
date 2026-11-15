@@ -1,0 +1,13 @@
+
+Latency: measures the time intervall between timer expiry and processing of this timer event.
+
+Definition of the guarantee: if the latency is greater than the deadline (10ms), a warning ist written in the log.
+
+Root cause: in the original version, thread maintenance has a higher priority (4) than thread control(7).
+After timer expiry, both threads are runnable. The thread with the higher priority, maintenance, is scheduled first.
+Only after thread maintenance has finished, thread control is scheduled. Thread control is therefore delayed and misses its deadline.
+
+Priority change fixes it: now thread maintenance has a lower priority (9) than thread control(7).
+After timer expiry, both threads are runnable. The thread with the higher priority, control, is scheduled first and hits its deadline.
+After thread control has finished, thread maintenance is scheduled.
+
