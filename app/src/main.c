@@ -1,114 +1,96 @@
 #include <zephyr/kernel.h>
 #include <zephyr/logging/log.h>
 
+#define PROTECTED_WORKER
+//#undef PROTECTED_WORKER
+
 LOG_MODULE_REGISTER(demo, LOG_LEVEL_DBG);
 
-#define STACK_SIZE 1024
+#define STACK_SIZE      1024
+#define PRIO            5
+#define INCREMENTS      1000000   /* each thread increments this many times */
 
-#define PRIO_LOW 	7
-#define PRIO_MED 	5
-#define PRIO_HIGH	3 
-#define PRIO_COOP	(-1)
+/* Shared state */
+static volatile uint32_t counter;
+
+static struct k_sem done_sem;
+
+static K_MUTEX_DEFINE(counter_mutex);
 
 
-void coop_fn(void *p1, void *p2, void *p3)
+#ifdef PROTECTED_WORKER
+
+void worker_fn(void *p1, void *p2, void *p3)
 {
+    const char *name = k_thread_name_get(k_current_get());
 
-   LOG_INF("[COOP] starting - will run 5 steps without yielding");
-
-    // coop_fn: from priority -1 it only lets ready threads of equal or higher priority run,
-    // so t_high, t_med and t_low stay blocked until coop_fn returns, sleeps or blocks
-
-    for (int i = 0; i < 5; i++) {
-        k_busy_wait(40000);
-        LOG_INF("[COOP] busy iteration %d/5 - still holding CPU", i + 1);
+    for (int i = 0; i < INCREMENTS; i++) {
+        k_mutex_lock(&counter_mutex, K_FOREVER);
+        counter++;
+        k_mutex_unlock(&counter_mutex);
     }
 
-
-    LOG_INF("[COOP] yielding now");
-    LOG_INF("[COOP] after yielding scheduling will take place");
-    LOG_INF("[COOP] will still be task with highest priority and again executed after scheduling");
-
-    k_yield();
-
-    LOG_INF("[COOP] running again");
-
-    LOG_INF("[COOP] finishing now");
-    LOG_INF("[COOP] after finishing, HIGH, MED and LOW can run");
-    LOG_INF("[COOP] done");
-
+    LOG_INF("[%s] finished", name);
+    k_sem_give(&done_sem);
 }
 
+#else
 
-void low_fn(void *p1, void *p2, void *p3)
+void worker_fn(void *p1, void *p2, void *p3)
 {
+    const char *name = k_thread_name_get(k_current_get());
 
-   LOG_INF("[LOW] started");
-
-   for (int i = 0; i < 10; i++) {
-        LOG_INF("[LOW] step %d  tick=%u", i, k_uptime_get_32());
-
-        k_msleep(300);
+    for (int i = 0; i < INCREMENTS; i++) {
+        counter++;
     }
 
-    LOG_INF("[LOW] done");
-
+    LOG_INF("[%s] finished", name);
+    k_sem_give(&done_sem);
 }
 
-
-void med_fn(void *p1, void *p2, void *p3)
-{
-
-   LOG_INF("[MED] started");
-
-   for (int i = 0; i < 10; i++) {
-        LOG_INF("[MED] step %d  tick=%u", i, k_uptime_get_32());
-
-        k_msleep(200);
-    }
-
-    LOG_INF("[MED] done");
-
-}
+#endif
 
 
-void high_fn(void *p1, void *p2, void *p3)
-{
-
-   LOG_INF("[HIGH] started");
-
-   for (int i = 0; i < 10; i++) {
-        LOG_INF("[HIGH] step %d  tick=%u", i, k_uptime_get_32());
-
-        k_msleep(100);
-    }
-
-    LOG_INF("[HIGH] done");
-
-}
-
-
-K_THREAD_DEFINE(t_coop, STACK_SIZE, coop_fn,
-                NULL, NULL, NULL, PRIO_COOP, 0, 0);
-
-K_THREAD_DEFINE(t_low, STACK_SIZE, low_fn,
-                NULL, NULL, NULL, PRIO_LOW, 0, 0);
-
-K_THREAD_DEFINE(t_med, STACK_SIZE, med_fn,
-                NULL, NULL, NULL, PRIO_MED, 0, 0);
-
-K_THREAD_DEFINE(t_high, STACK_SIZE,high_fn,
-                NULL, NULL, NULL, PRIO_HIGH, 0, 0);
-
+K_THREAD_DEFINE(worker_a, STACK_SIZE, worker_fn, NULL, NULL, NULL,
+                PRIO, 0, 0);
+K_THREAD_DEFINE(worker_b, STACK_SIZE, worker_fn, NULL, NULL, NULL,
+                PRIO, 0, 0);
 
 int main(void)
 {
+    k_sem_init(&done_sem, 0, 2);
+    int64_t time = k_uptime_get();
 
-    LOG_INF("=== L1 Task 1: Scheduling Competition ===");
-    LOG_INF("COOP prio=%d (cooperative)  HIGH prio=%d  MED prio=%d  LOW prio=%d",
-            PRIO_COOP, PRIO_HIGH, PRIO_MED, PRIO_LOW);
+    LOG_INF("=== L2 Task 1: Mutex Protection ===");
+    LOG_INF("Expected final value: %d", INCREMENTS * 2);
+
+    /* Wait for both workers to complete */
+    k_sem_take(&done_sem, K_FOREVER);
+    k_sem_take(&done_sem, K_FOREVER);
+
+    LOG_INF("Actual  final value: %u", counter);
+
+    if (counter == INCREMENTS * 2) {
+        LOG_WRN("No race this run");
+    } else {
+        LOG_ERR("Race condition confirmed: lost %d updates",
+                (INCREMENTS * 2) - counter);
+    }
+    LOG_INF("Execution time: %lld ms", k_uptime_delta(&time));
+
+    /*  Unprotected version: counter++ is not an atomic operation.
+	A task may be interrupted after reading counter and before having written back original counter value + 1.
+ 	After Interruption, the second thread may access counter.
+	Both threads then write back original counter value + 1, so we are missing one increment.
+    */
+
+    /*  Protected version:
+        Before reading counter, a task takes the mutex.
+	If the task is interrupted, the other  task blocks attempting to take the mutex.
+	Only after the first task has written back original counter value + 1 and released the mutex,
+	the second task can take the mutex and access counter. Each task increments counter.
+    */
 
     return 0;
-
 }
 
