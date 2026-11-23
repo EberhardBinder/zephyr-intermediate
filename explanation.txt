@@ -1,7 +1,11 @@
 
 Latency: measures the time intervall between timer expiry and processing of this timer event.
+The measured latency is start latency rather than full processing time.
 
-Definition of the guarantee: if the latency is greater than the deadline (10ms), a warning ist written in the log.
+Definition of the response-time guarantee: control work must start within 10 ms of the timer event.
+Its start event is event_ready, its end event is event_done.
+
+If the latency is greater than the deadline (10 ms), a warning ist written in the log.
 
 Root cause: in the original version, thread maintenance has a higher priority (4) than thread control(7).
 After timer expiry, both threads are runnable. The thread with the higher priority, maintenance, is scheduled first.
